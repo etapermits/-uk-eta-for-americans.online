@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ETA Permits — Admin Dashboard</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f0f2f5; color: #1a1a1a; }
+.header { background: linear-gradient(135deg, #0C447C, #185FA5); padding: 1rem 1.5rem; color: white; display: flex; align-items: center; justify-content: space-between; }
+.header h1 { font-size: 1.2rem; font-weight: 600; }
+.header .meta { font-size: 12px; opacity: 0.8; }
+.main { max-width: 1300px; margin: 0 auto; padding: 1rem; }
+.summary { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 10px; margin-bottom: 1rem; }
+.sum-card { background: white; border-radius: 10px; border: 1px solid #e5e7eb; padding: 0.75rem 1rem; }
+.sum-card .label { font-size: 11px; color: #9ca3af; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.4px; }
+.sum-card .value { font-size: 20px; font-weight: 700; color: #0C447C; }
+.sum-card .sub { font-size: 11px; color: #6b7280; margin-top: 2px; }
+.sum-card.green .value { color: #166534; }
+.sum-card.orange .value { color: #92400e; }
+.sum-card.red .value { color: #991b1b; }
+.tabs { display: flex; gap: 6px; margin-bottom: 1rem; flex-wrap: wrap; }
+.tab { padding: 7px 16px; border-radius: 20px; font-size: 13px; font-weight: 600; cursor: pointer; border: 1px solid #d1d5db; background: white; color: #6b7280; transition: all 0.15s; }
+.tab.active { background: #0C447C; color: white; border-color: #0C447C; }
+.tab:hover:not(.active) { background: #f3f4f6; }
+.filters { background: white; border-radius: 10px; border: 1px solid #e5e7eb; padding: 0.875rem 1rem; margin-bottom: 1rem; display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+.filters input, .filters select { padding: 7px 10px; border: 1px solid #d1d5db; border-radius: 6px; font-size: 13px; color: #374151; }
+.filters input { width: 170px; }
+.filters select { width: 145px; }
+.filters label { font-size: 12px; color: #6b7280; }
+.clear-btn { padding: 7px 14px; background: #f3f4f6; border: 1px solid #d1d5db; border-radius: 6px; cursor: pointer; font-size: 13px; color: #374151; }
+.refresh-btn { padding: 7px 14px; background: #0C447C; border: none; border-radius: 6px; cursor: pointer; font-size: 13px; color: white; }
+.table-wrap { background: white; border-radius: 10px; border: 1px solid #e5e7eb; overflow: hidden; overflow-x: auto; }
+.table-info { padding: 0.75rem 1rem; font-size: 13px; color: #6b7280; border-bottom: 1px solid #f0f0f0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+table { width: 100%; border-collapse: collapse; font-size: 12px; min-width: 900px; }
+th { background: #0C447C; color: white; padding: 9px 10px; text-align: left; font-size: 11px; font-weight: 500; white-space: nowrap; }
+td { padding: 8px 10px; border-bottom: 1px solid #f3f4f6; color: #374151; vertical-align: middle; white-space: nowrap; }
+tr:last-child td { border-bottom: none; }
+tr:hover td { background: #f9fafb; }
+.row-num { color: #9ca3af; font-size: 11px; }
+.ref { font-weight: 700; font-family: monospace; font-size: 11px; }
+.ref-uk { color: #1e40af; }
+.ref-ca { color: #166534; }
+.ref-us { color: #991b1b; }
+.ref-eu { color: #5b21b6; }
+.status-badge { padding: 2px 8px; border-radius: 10px; font-size: 11px; font-weight: 600; }
+.s-paid { background: #dcfce7; color: #166534; }
+.s-pending { background: #fef3c7; color: #92400e; }
+.s-complete { background: #dbeafe; color: #1e40af; }
+.s-refunded { background: #fee2e2; color: #991b1b; }
+.s-other { background: #f3f4f6; color: #6b7280; }
+.amount { font-weight: 600; color: #111; }
+.cost-cell { color: #dc2626; font-weight: 500; }
+.margin-cell { color: #166534; font-weight: 700; }
+.email { color: #185FA5; font-size: 11px; }
+.date-cell { font-size: 11px; color: #6b7280; }
+.name-cell { font-weight: 500; font-size: 12px; }
+.notes-cell { font-size: 11px; color: #6b7280; max-width: 120px; overflow: hidden; text-overflow: ellipsis; }
+.loading { text-align: center; padding: 3rem; color: #9ca3af; }
+.spinner { width: 32px; height: 32px; border: 3px solid #e5e7eb; border-top-color: #0C447C; border-radius: 50%; animation: spin 0.8s linear infinite; margin: 0 auto 1rem; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.empty { text-align: center; padding: 3rem; color: #9ca3af; font-size: 14px; }
+.error-box { background: #fee2e2; border: 1px solid #fca5a5; border-radius: 8px; padding: 1rem; margin-bottom: 1rem; font-size: 13px; color: #991b1b; }
+.pdf-link { color: #185FA5; text-decoration: none; font-size: 11px; }
+.th-cost { background: #7f1d1d; }
+.th-margin { background: #14532d; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>🛂 ETA Permits — Admin Dashboard</h1>
+  <div class="meta" id="lastUpdated">Loading...</div>
+</div>
+
+<div class="main">
+  <div id="errorBox" class="error-box" style="display:none;"></div>
+
+  <div class="summary" id="summary">
+    <div class="sum-card"><div class="label">Total Orders</div><div class="value" id="s-total">—</div></div>
+    <div class="sum-card"><div class="label">🇬🇧 UK</div><div class="value" id="s-uk">—</div></div>
+    <div class="sum-card"><div class="label">🇨🇦 Canada</div><div class="value" id="s-ca">—</div></div>
+    <div class="sum-card"><div class="label">🇺🇸 US</div><div class="value" id="s-us">—</div></div>
+    <div class="sum-card"><div class="label">🇪🇺 EU</div><div class="value" id="s-eu">—</div></div>
+    <div class="sum-card orange"><div class="label">Pending</div><div class="value" id="s-pending">—</div></div>
+    <div class="sum-card"><div class="label">Total Revenue</div><div class="value" id="s-revenue">—</div><div class="sub">excl. refunds</div></div>
+    <div class="sum-card red"><div class="label">Total Gov Costs</div><div class="value" id="s-costs">—</div><div class="sub">excl. refunds</div></div>
+    <div class="sum-card green"><div class="label">Gross Margin</div><div class="value" id="s-margin">—</div><div class="sub">excl. refunds</div></div>
+  </div>
+
+  <div class="tabs">
+    <div class="tab active" onclick="setCountry('ALL',this)">All Orders</div>
+    <div class="tab" onclick="setCountry('ETAUK',this)">🇬🇧 UK</div>
+    <div class="tab" onclick="setCountry('ETACA',this)">🇨🇦 Canada</div>
+    <div class="tab" onclick="setCountry('ETAUS',this)">🇺🇸 US ESTA</div>
+    <div class="tab" onclick="setCountry('ETAEU',this)">🇪🇺 EU ETIAS</div>
+  </div>
+
+  <div class="filters">
+    <input type="text" id="searchName" placeholder="🔍 Name..." oninput="applyFilters()">
+    <input type="text" id="searchRef" placeholder="🔍 Reference..." oninput="applyFilters()">
+    <input type="text" id="searchEmail" placeholder="🔍 Email..." oninput="applyFilters()">
+    <div style="display:flex;align-items:center;gap:4px;">
+      <label>From</label>
+      <input type="date" id="dateFrom" onchange="applyFilters()" style="width:135px;">
+    </div>
+    <div style="display:flex;align-items:center;gap:4px;">
+      <label>To</label>
+      <input type="date" id="dateTo" onchange="applyFilters()" style="width:135px;">
+    </div>
+    <select id="statusFilter" onchange="applyFilters()">
+      <option value="">All statuses</option>
+      <option value="PAID">PAID</option>
+      <option value="PENDING">PENDING</option>
+      <option value="COMPLETE">COMPLETE</option>
+      <option value="REFUNDED">REFUNDED</option>
+    </select>
+    <button class="clear-btn" onclick="clearFilters()">Clear</button>
+    <button class="refresh-btn" onclick="loadData()">↻ Refresh</button>
+  </div>
+
+  <div class="table-wrap">
+    <div class="table-info">
+      <span id="tableCount">Loading records...</span>
+      <span id="tableTotals" style="display:flex;gap:16px;font-size:12px;"></span>
+    </div>
+    <div id="tableContainer">
+      <div class="loading"><div class="spinner"></div>Loading orders from CMS...</div>
+    </div>
+  </div>
+</div>
+
+<script>
+const WIX_API = 'https://www.etapermits.com/_functions/getApplications';
+let allRecords = [];
+let currentCountry = 'ALL';
+
+// Pricing config (all in GBP)
+const PRICING = {
+  ETAUK: { salePerPerson: 65,    costPerPerson: 20,    currency: '£',   convRate: 1 },
+  ETACA: { salePerPerson: 22.50, costPerPerson: 3.70,  currency: 'CA$', convRate: 0.578 },
+  ETAUS: { salePerPerson: 60,    costPerPerson: 30.14, currency: 'US$', convRate: 0.75 },
+  ETAEU: { salePerPerson: 57,    costPerPerson: 17,    currency: '€',   convRate: 0.857 }
+};
+
+function getCountryCode(ref) {
+  if (!ref) return null;
+  for (const code of ['ETAUK','ETACA','ETAUS','ETAEU']) {
+    if (ref.startsWith(code)) return code;
+  }
+  return null;
+}
+
+function calcCostAndMargin(ref, amountRaw) {
+  const code = getCountryCode(ref);
+  if (!code || !amountRaw) return { cost: null, margin: null, pax: 1 };
+  const p = PRICING[code];
+  const amount = parseFloat(amountRaw);
+  if (!amount || !p.salePerPerson) return { cost: null, margin: null, pax: 1 };
+  const pax = Math.round(amount / p.salePerPerson) || 1;
+  const cost = pax * p.costPerPerson;
+  const margin = amount - cost;
+  return { cost, margin, pax };
+}
+
+async function loadData() {
+  document.getElementById('tableContainer').innerHTML = '<div class="loading"><div class="spinner"></div>Loading orders...</div>';
+  document.getElementById('errorBox').style.display = 'none';
+  try {
+    const res = await fetch(WIX_API);
+    if (!res.ok) throw new Error('API returned ' + res.status);
+    const data = await res.json();
+    allRecords = data.items || [];
+    document.getElementById('lastUpdated').textContent = 'Updated: ' + new Date().toLocaleTimeString();
+    updateSummary();
+    applyFilters();
+  } catch(err) {
+    document.getElementById('errorBox').style.display = 'block';
+    document.getElementById('errorBox').innerHTML = `<strong>Could not load data.</strong> Error: ${err.message}`;
+    document.getElementById('tableContainer').innerHTML = '<div class="empty">No data loaded.</div>';
+  }
+}
+
+function updateSummary() {
+  const active = allRecords.filter(r => (r.status||'').toUpperCase() !== 'REFUNDED');
+  const uk = allRecords.filter(r => (r.reference||'').startsWith('ETAUK')).length;
+  const ca = allRecords.filter(r => (r.reference||'').startsWith('ETACA')).length;
+  const us = allRecords.filter(r => (r.reference||'').startsWith('ETAUS')).length;
+  const eu = allRecords.filter(r => (r.reference||'').startsWith('ETAEU')).length;
+  const pending = allRecords.filter(r => (r.status||'').toUpperCase() === 'PENDING').length;
+  
+  let totalRev = 0, totalCost = 0;
+  active.forEach(r => {
+    const amt = parseFloat(r.amount) || 0;
+    totalRev += amt;
+    const { cost } = calcCostAndMargin(r.reference, r.amount);
+    if (cost) totalCost += cost;
+  });
+
+  document.getElementById('s-total').textContent = allRecords.length;
+  document.getElementById('s-uk').textContent = uk;
+  document.getElementById('s-ca').textContent = ca;
+  document.getElementById('s-us').textContent = us;
+  document.getElementById('s-eu').textContent = eu;
+  document.getElementById('s-pending').textContent = pending;
+  document.getElementById('s-revenue').textContent = '£' + totalRev.toFixed(0);
+  document.getElementById('s-costs').textContent = '£' + totalCost.toFixed(0);
+  document.getElementById('s-margin').textContent = '£' + (totalRev - totalCost).toFixed(0);
+}
+
+function setCountry(c, el) {
+  currentCountry = c;
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  el.classList.add('active');
+  applyFilters();
+}
+
+function applyFilters() {
+  const name = document.getElementById('searchName').value.toLowerCase().trim();
+  const ref = document.getElementById('searchRef').value.toLowerCase().trim();
+  const email = document.getElementById('searchEmail').value.toLowerCase().trim();
+  const dateFrom = document.getElementById('dateFrom').value;
+  const dateTo = document.getElementById('dateTo').value;
+  const status = document.getElementById('statusFilter').value.toUpperCase();
+
+  let filtered = allRecords.filter(r => {
+    const refStr = (r.reference||'').toUpperCase();
+    const nameStr = (r.name||'').toLowerCase();
+    const emailStr = (r.email||'').toLowerCase();
+    const statusStr = (r.status||'').toUpperCase();
+    const dateStr = r.date ? r.date.substring(0,10) : '';
+    if (currentCountry !== 'ALL' && !refStr.startsWith(currentCountry)) return false;
+    if (name && !nameStr.includes(name)) return false;
+    if (ref && !refStr.includes(ref.toUpperCase())) return false;
+    if (email && !emailStr.includes(email)) return false;
+    if (status && statusStr !== status) return false;
+    if (dateFrom && dateStr < dateFrom) return false;
+    if (dateTo && dateStr > dateTo) return false;
+    return true;
+  });
+
+  renderTable(filtered);
+}
+
+function getRefClass(ref) {
+  if (!ref) return '';
+  if (ref.startsWith('ETAUK')) return 'ref-uk';
+  if (ref.startsWith('ETACA')) return 'ref-ca';
+  if (ref.startsWith('ETAUS')) return 'ref-us';
+  if (ref.startsWith('ETAEU')) return 'ref-eu';
+  return '';
+}
+
+function getStatusClass(s) {
+  if (!s) return 's-other';
+  const u = s.toUpperCase();
+  if (u.includes('PAID')) return 's-paid';
+  if (u.includes('PENDING')) return 's-pending';
+  if (u.includes('COMPLETE')) return 's-complete';
+  if (u.includes('REFUND')) return 's-refunded';
+  return 's-other';
+}
+
+function formatDate(d) {
+  if (!d) return '—';
+  try { return new Date(d).toLocaleDateString('en-GB', {day:'2-digit',month:'short',year:'numeric'}); }
+  catch(e) { return d; }
+}
+
+function renderTable(data) {
+  let totalRev = 0, totalCost = 0, totalMargin = 0;
+  const isRefunded = r => (r.status||'').toUpperCase().includes('REFUND');
+
+  data.forEach(r => {
+    if (!isRefunded(r)) {
+      const amt = parseFloat(r.amount) || 0;
+      totalRev += amt;
+      const { cost, margin } = calcCostAndMargin(r.reference, r.amount);
+      if (cost) totalCost += cost;
+      if (margin) totalMargin += margin;
+    }
+  });
+
+  document.getElementById('tableCount').textContent = `Showing ${data.length} record${data.length!==1?'s':''}`;
+  document.getElementById('tableTotals').innerHTML = data.length ? `
+    <span>Revenue: <strong>£${totalRev.toFixed(2)}</strong></span>
+    <span style="color:#dc2626;">Gov costs: <strong>£${totalCost.toFixed(2)}</strong></span>
+    <span style="color:#166534;">Margin: <strong>£${totalMargin.toFixed(2)}</strong></span>
+  ` : '';
+
+  if (!data.length) {
+    document.getElementById('tableContainer').innerHTML = '<div class="empty">No records match your filters</div>';
+    return;
+  }
+
+  const rows = data.map((r, i) => {
+    const refClass = getRefClass(r.reference);
+    const statusClass = getStatusClass(r.status);
+    const code = getCountryCode(r.reference);
+    const p = code ? PRICING[code] : null;
+    const currency = p ? p.currency : '£';
+    const { cost, margin, pax } = calcCostAndMargin(r.reference, r.amount);
+    const refunded = isRefunded(r);
+    
+    return `<tr>
+      <td class="row-num">${i+1}</td>
+      <td class="date-cell">${formatDate(r.date)}</td>
+      <td><span class="ref ${refClass}">${r.reference||'—'}</span></td>
+      <td class="name-cell">${r.name||'—'}</td>
+      <td class="email">${r.email||'—'}</td>
+      <td class="amount">${r.amount ? currency+r.amount : '—'}${pax>1?' ('+pax+'pax)':''}</td>
+      <td class="cost-cell">${refunded?'—':(cost?'£'+cost.toFixed(2):'—')}</td>
+      <td class="margin-cell">${refunded?'REFUNDED':(margin?'£'+margin.toFixed(2):'—')}</td>
+      <td><span class="status-badge ${statusClass}">${r.status||'—'}</span></td>
+      <td class="notes-cell" title="${r.notes||''}">${r.notes||'—'}</td>
+      ${r.pdfUrl?`<td><a href="${r.pdfUrl}" target="_blank" class="pdf-link">PDF ↗</a></td>`:'<td>—</td>'}
+    </tr>`;
+  }).join('');
+
+  document.getElementById('tableContainer').innerHTML = `
+    <table>
+      <thead><tr>
+        <th>#</th>
+        <th>Date</th>
+        <th>Reference</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Amount</th>
+        <th class="th-cost">Gov Cost</th>
+        <th class="th-margin">Gross Margin</th>
+        <th>Status</th>
+        <th>ETA / Notes</th>
+        <th>PDF</th>
+      </tr></thead>
+      <tbody>${rows}</tbody>
+    </table>`;
+}
+
+function clearFilters() {
+  ['searchName','searchRef','searchEmail','dateFrom','dateTo'].forEach(id => document.getElementById(id).value='');
+  document.getElementById('statusFilter').value='';
+  applyFilters();
+}
+
+loadData();
+</script>
+</body>
+</html>
