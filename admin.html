@@ -64,6 +64,7 @@ tr:hover td { background: #f9fafb; }
 .pdf-link { color: #185FA5; text-decoration: none; font-size: 11px; }
 .th-cost { background: #7f1d1d; }
 .th-margin { background: #14532d; }
+.fx-note { text-align: center; font-size: 10px; color: #9ca3af; padding: 0.75rem 0 1.5rem; }
 </style>
 </head>
 <body>
@@ -127,6 +128,12 @@ tr:hover td { background: #f9fafb; }
     <div id="tableContainer">
       <div class="loading"><div class="spinner"></div>Loading orders from CMS...</div>
     </div>
+  </div>
+
+  <div class="fx-note">
+    All figures shown in GBP (£) are converted from local transaction currency using fixed reference rates
+    correct as of 10 July 2026 (CA$→£ 0.578, US$→£ 0.75, €→£ 0.857). Rates are not updated automatically
+    and do not reflect the exact rate applied at the time of each individual transaction.
   </div>
 </div>
 
@@ -321,9 +328,13 @@ function renderTable(data) {
     const currency = p ? p.currency : '£';
     const { cost, margin, pax } = calcCostAndMargin(r.reference, r.amount);
     const refunded = isRefunded(r);
+    const costGBP = cost != null ? toGBP(r.reference, cost) : null;
+    const marginGBP = margin != null ? toGBP(r.reference, margin) : null;
 
-    // Per-row cost/margin cells shown in the order's LOCAL currency
-    // (matches the "Amount" column's currency for easy comparison).
+    // Per-row cost/margin cells shown in GBP throughout (converted from
+    // local currency), so every row is directly comparable and the whole
+    // dashboard is consistent for DWP/accounting purposes. The original
+    // local-currency amount stays visible in the Amount column for reference.
     return `<tr>
       <td class="row-num">${i+1}</td>
       <td class="date-cell">${formatDate(r.date)}</td>
@@ -331,8 +342,8 @@ function renderTable(data) {
       <td class="name-cell">${r.name||'—'}</td>
       <td class="email">${r.email||'—'}</td>
       <td class="amount">${r.amount ? currency+r.amount : '—'}${pax>1?' ('+pax+'pax)':''}</td>
-      <td class="cost-cell">${refunded?'—':(cost?currency+cost.toFixed(2):'—')}</td>
-      <td class="margin-cell">${refunded?'REFUNDED':(margin?currency+margin.toFixed(2):'—')}</td>
+      <td class="cost-cell">${refunded?'—':(costGBP!=null?'£'+costGBP.toFixed(2):'—')}</td>
+      <td class="margin-cell">${refunded?'REFUNDED':(marginGBP!=null?'£'+marginGBP.toFixed(2):'—')}</td>
       <td><span class="status-badge ${statusClass}">${r.status||'—'}</span></td>
       <td class="notes-cell" title="${r.notes||''}">${r.notes||'—'}</td>
       ${r.pdfUrl?`<td><a href="${r.pdfUrl}" target="_blank" class="pdf-link">PDF ↗</a></td>`:'<td>—</td>'}
