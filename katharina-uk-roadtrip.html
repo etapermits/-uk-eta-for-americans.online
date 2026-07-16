@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Katharina's Great British Road Trip — ETA Permits</title>
+<title>Kathrin's Great British Road Trip — ETA Permits</title>
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f4f6f8; color: #1a1a1a; }
@@ -77,12 +77,12 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
 <body>
 
 <div class="hero">
-  <h1>🇬🇧 Katharina's Great British Road Trip</h1>
-  <p class="subtitle">A personal guide crafted by Philip at ETA Permits<br>Dover → Wales → Chester → Liverpool → Lake District → Scotland → York → Dover</p>
+  <h1>🇬🇧 Kathrin's Great British Road Trip</h1>
+  <p class="subtitle">A personal guide crafted by Philip at ETA Permits<br>Dover → Cambridge → York → Edinburgh → Fort William → Hadrian's Wall → Lake District → Liverpool → Chester → Caernarfon → Brecon Beacons → Dover</p>
   <div class="meta">
-    <span class="pill">16 July – 31 July</span>
-    <span class="pill">~15 days</span>
-    <span class="pill">~2,200 miles</span>
+    <span class="pill">17 July – 29 July</span>
+    <span class="pill">~13 days</span>
+    <span class="pill">Ben Nevis first, Wales last</span>
     <span class="pill">Drive on the LEFT!</span>
   </div>
 </div>
@@ -90,12 +90,14 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
 <div class="nav">
   <div class="nav-inner">
     <button class="nav-btn active" onclick="showSection('overview',this)">Overview</button>
-    <button class="nav-btn" onclick="showSection('wales',this)">🏴󠁧󠁢󠁷󠁬󠁳󠁿 Wales</button>
-    <button class="nav-btn" onclick="showSection('chester',this)">Chester</button>
-    <button class="nav-btn" onclick="showSection('liverpool',this)">Liverpool</button>
+    <button class="nav-btn" onclick="showSection('cambridge-york',this)">Cambridge & York</button>
+    <button class="nav-btn" onclick="showSection('edinburgh',this)">🏴󠁧󠁢󠁳󠁣󠁴󠁿 Edinburgh</button>
+    <button class="nav-btn" onclick="showSection('fortwilliam',this)">Fort William</button>
+    <button class="nav-btn" onclick="showSection('hadrianswall',this)">Hadrian's Wall</button>
     <button class="nav-btn" onclick="showSection('lakes',this)">Lake District</button>
-    <button class="nav-btn" onclick="showSection('scotland',this)">🏴󠁧󠁢󠁳󠁣󠁴󠁿 Scotland</button>
-    <button class="nav-btn" onclick="showSection('york',this)">York</button>
+    <button class="nav-btn" onclick="showSection('liverpool',this)">Liverpool</button>
+    <button class="nav-btn" onclick="showSection('chester',this)">Chester</button>
+    <button class="nav-btn" onclick="showSection('wales',this)">🏴󠁧󠁢󠁷󠁬󠁳󠁿 Wales</button>
     <button class="nav-btn" onclick="showSection('tips',this)">Essential Tips</button>
   </div>
 </div>
@@ -105,49 +107,48 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
 <!-- OVERVIEW -->
 <div id="overview" class="section active">
   <div class="overview-grid">
-    <div class="stat-card"><div class="s-label">Start & finish</div><div class="s-value">Dover</div></div>
-    <div class="stat-card"><div class="s-label">Total distance</div><div class="s-value">~2,200 mi</div></div>
-    <div class="stat-card"><div class="s-label">Days</div><div class="s-value">~15 days</div></div>
+    <div class="stat-card"><div class="s-label">Start</div><div class="s-value">Dover, 17 July</div></div>
+    <div class="stat-card"><div class="s-label">Finish (UK)</div><div class="s-value">Dover, 29 July</div></div>
+    <div class="stat-card"><div class="s-label">Days in UK</div><div class="s-value">~13 days</div></div>
     <div class="stat-card"><div class="s-label">Highest point</div><div class="s-value">Ben Nevis 1,345m</div></div>
   </div>
 
   <div class="route-flow">
-    <h3>Your route — Philip's recommended order</h3>
-    <div class="rf-stop"><div class="rf-line"><div class="rf-dot" style="background:#185FA5;"></div><div class="rf-conn"></div></div><div class="rf-text"><h4>Dover — ferry arrival</h4><p>Day 1 · Drive west immediately, avoid London</p></div></div>
-    <div class="rf-stop"><div class="rf-line"><div class="rf-dot" style="background:#1D9E75;"></div><div class="rf-conn"></div></div><div class="rf-text"><h4>Wales — Brecon Beacons, Caernarfon, West Coast</h4><p>Days 1–3 · 2 nights · Do not skip Wales</p></div></div>
-    <div class="rf-stop"><div class="rf-line"><div class="rf-dot" style="background:#7C3AED;"></div><div class="rf-conn"></div></div><div class="rf-text"><h4>Chester — Roman walls, The Rows, Cathedral</h4><p>Day 4 · Half day to full day</p></div></div>
-    <div class="rf-stop"><div class="rf-line"><div class="rf-dot" style="background:#DC2626;"></div><div class="rf-conn"></div></div><div class="rf-text"><h4>Liverpool — Speke Hall, Docks, The Beatles</h4><p>Days 4–5 · 1 night</p></div></div>
-    <div class="rf-stop"><div class="rf-line"><div class="rf-dot" style="background:#059669;"></div><div class="rf-conn"></div></div><div class="rf-text"><h4>Lake District — Windermere, fells, waterfalls</h4><p>Days 5–7 · 2 nights</p></div></div>
-    <div class="rf-stop"><div class="rf-line"><div class="rf-dot" style="background:#0C447C;"></div><div class="rf-conn"></div></div><div class="rf-text"><h4>Edinburgh — castle, Old Town, Arthur's Seat</h4><p>Days 8–9 · 2 nights</p></div></div>
-    <div class="rf-stop"><div class="rf-line"><div class="rf-dot" style="background:#1D9E75;"></div><div class="rf-conn"></div></div><div class="rf-text"><h4>Loch Ness → Fort William → Ben Nevis</h4><p>Days 10–12 · 2–3 nights · The main goal</p></div></div>
-    <div class="rf-stop"><div class="rf-line"><div class="rf-dot" style="background:#7C3AED;"></div><div class="rf-conn"></div></div><div class="rf-text"><h4>York — Minster, Shambles, Railway Museum</h4><p>Days 13–14 · 1–2 nights</p></div></div>
-    <div class="rf-stop"><div class="rf-line"><div class="rf-dot" style="background:#185FA5;"></div></div><div class="rf-text"><h4>Dover → France → Belgium coast</h4><p>Day 15–16 · Dunkirk, Bruges if time allows</p></div></div>
+    <h3>Kathrin's route — Ben Nevis first, Wales last</h3>
+    <div class="rf-stop"><div class="rf-line"><div class="rf-dot" style="background:#185FA5;"></div><div class="rf-conn"></div></div><div class="rf-text"><h4>Dover — ferry arrival</h4><p>17 July · Wander Cambridge on the way north</p></div></div>
+    <div class="rf-stop"><div class="rf-line"><div class="rf-dot" style="background:#7C3AED;"></div><div class="rf-conn"></div></div><div class="rf-text"><h4>York</h4><p>17 July · First night</p></div></div>
+    <div class="rf-stop"><div class="rf-line"><div class="rf-dot" style="background:#0C447C;"></div><div class="rf-conn"></div></div><div class="rf-text"><h4>Edinburgh — up the coast</h4><p>18–19 July · 2 nights</p></div></div>
+    <div class="rf-stop"><div class="rf-line"><div class="rf-dot" style="background:#1D9E75;"></div><div class="rf-conn"></div></div><div class="rf-text"><h4>Fort William — Loch Ness, Glencoe, Ben Nevis</h4><p>20–22 July · 3 nights, booked</p></div></div>
+    <div class="rf-stop"><div class="rf-line"><div class="rf-dot" style="background:#DC2626;"></div><div class="rf-conn"></div></div><div class="rf-text"><h4>Carlisle — via Glasgow, Hadrian's Wall</h4><p>23 July · Camping if weather allows</p></div></div>
+    <div class="rf-stop"><div class="rf-line"><div class="rf-dot" style="background:#059669;"></div><div class="rf-conn"></div></div><div class="rf-text"><h4>Lake District — Windermere, fells, waterfalls</h4><p>24–25 July · 2 nights</p></div></div>
+    <div class="rf-stop"><div class="rf-line"><div class="rf-dot" style="background:#DC2626;"></div><div class="rf-conn"></div></div><div class="rf-text"><h4>Liverpool — Speke Hall, Docks</h4><p>25–26 July · 1 night</p></div></div>
+    <div class="rf-stop"><div class="rf-line"><div class="rf-dot" style="background:#7C3AED;"></div><div class="rf-conn"></div></div><div class="rf-text"><h4>Chester → Caernarfon</h4><p>26–27 July · Roman walls, then Snowdonia</p></div></div>
+    <div class="rf-stop"><div class="rf-line"><div class="rf-dot" style="background:#1D9E75;"></div><div class="rf-conn"></div></div><div class="rf-text"><h4>Brecon Beacons, maybe Cardiff</h4><p>28 July · Last full day in Wales</p></div></div>
+    <div class="rf-stop"><div class="rf-line"><div class="rf-dot" style="background:#185FA5;"></div></div><div class="rf-text"><h4>Dover → Calais → Belgium coast → Switzerland</h4><p>29–31 July · Interlaken for 1 August fireworks</p></div></div>
   </div>
 
   <div class="card" style="margin-bottom:1rem;">
     <div style="padding:1.25rem;">
-      <h3 style="font-size:15px; font-weight:600; margin-bottom:0.75rem;">🗺️ Plan your route</h3>
-      <p style="font-size:13px; color:#4b5563; line-height:1.65; margin-bottom:0.75rem;">Use Google Maps to choose your preferred roads — motorways (M-roads) are fastest, A-roads through the countryside are slower but far more beautiful. For Wales and Scotland especially, the A-roads are the experience.</p>
-      <a href="https://www.google.com/maps/dir/Dover,+UK/Brecon+Beacons,+Wales/Caernarfon,+Wales/Chester,+UK/Liverpool,+UK/Lake+District,+UK/Edinburgh,+UK/Fort+William,+UK/York,+UK/Dover,+UK" target="_blank" style="display:inline-block; background:#185FA5; color:white; padding:10px 20px; border-radius:8px; font-size:13px; font-weight:500; text-decoration:none; margin-right:8px; margin-bottom:8px;">Open full route in Google Maps ↗</a>
-      <a href="https://www.google.com/maps/dir/Dover/Wales/Chester/Liverpool/Lake+District/Edinburgh/Ben+Nevis/York/Dover" target="_blank" style="display:inline-block; background:#f3f4f6; color:#185FA5; padding:10px 20px; border-radius:8px; font-size:13px; font-weight:500; text-decoration:none; border:1px solid #d1d5db;">A-roads scenic route ↗</a>
+      <h3 style="font-size:15px; font-weight:600; margin-bottom:0.75rem;">🗺️ Your route</h3>
+      <p style="font-size:13px; color:#4b5563; line-height:1.65; margin-bottom:0.75rem;">This is your route, turned around exactly as you planned it on the map — Ben Nevis and the Highlands first, working your way south and west through Cumbria, the Lakes, Liverpool and Wales, finishing in Brecon before Dover. Use Google Maps to pick your preferred roads — motorways are fastest, A-roads are slower but far more beautiful, especially through Wales, the Highlands, and the Lakes.</p>
+      <a href="https://www.google.com/maps/dir/Dover,+UK/Cambridge,+UK/York,+UK/Edinburgh,+UK/Fort+William,+UK/Glasgow,+UK/Carlisle,+UK/Lake+District,+UK/Liverpool,+UK/Chester,+UK/Caernarfon,+Wales/Brecon+Beacons,+Wales/Dover,+UK" target="_blank" style="display:inline-block; background:#185FA5; color:white; padding:10px 20px; border-radius:8px; font-size:13px; font-weight:500; text-decoration:none; margin-right:8px; margin-bottom:8px;">Open your route in Google Maps ↗</a>
     </div>
   </div>
 
-  <div class="warning-box">⚠️ <strong>Philip's honest advice:</strong> You mentioned not booking accommodation ahead. For July — peak season — that's a gamble that could leave you stuck, especially in the Lake District and Scottish Highlands. Book just 2–3 nights ahead as you travel. Campsites are more flexible but still fill up. Scotland allows wild camping legally under the Land Reform Act — England and Wales do not without landowner permission.
-  </div>
-  <div class="from-philip">"You've no idea what's coming for you with this trip. I've travelled Europe many times but the UK — when you know where to go — is something else entirely. Philip"</div>
+  <div class="warning-box">⚠️ <strong>Philip's honest advice:</strong> You've booked Fort William already — good, that's the tightest window. For Carlisle/Hadrian's Wall you mentioned camping "if the weather is pleasant" — have a wet-weather fallback (a room in Carlisle) since you won't know until you're close. You're travelling in peak season and, as you've noticed from your own bookings, the Highlands are busy this July — keep booking 2–3 nights ahead as you go, especially around Edinburgh and the Lakes.</div>
+  <div class="from-philip">"I love that you've turned the whole thing around and gone your own way — Ben Nevis first, Wales as the finale. Honestly it might be the better order: you'll have adjusted to left-hand driving well before the single-track roads of the Highlands, and you'll end the trip gently in Wales rather than racing into the mountains. Safe travels, Kathrin — and forty years of driving on the left in New Zealand means you'll barely notice the switch. Philip"</div>
 </div>
 
-<!-- WALES -->
-<div id="wales" class="section">
+<!-- CAMBRIDGE & YORK -->
+<div id="cambridge-york" class="section">
   <div class="section-intro">
-    <strong>Wales — 3 days, 2 nights.</strong> Most visitors miss Wales entirely and drive straight north. That is a mistake. Wales is a different country — different language on every road sign, different landscape, different character. Ancient castles, dramatic mountains, a coastline that rivals anything in Europe, and a warmth from its people that is genuine. The dry stone walls you'll see everywhere — running across hillsides and farmland without a drop of mortar — date back to the 1500s and earlier. They are the bones of the landscape. Thousands of miles of them, built by hand, still standing. Watch for them in the Lake District too.
+    <strong>17 July — Dover to York, via Cambridge.</strong> Your first day. From the ferry, head north rather than through London — Cambridge sits conveniently on the way and is worth a few hours' wander before pushing on to York for the night.
   </div>
 
   <div class="card open">
     <div class="card-header" onclick="toggle(this)">
-      <div class="day-badge" style="background:#dcfce7; color:#166534;">Day 1</div>
-      <div class="card-title"><h3>Dover → South Wales — Brecon Beacons</h3><p>~220 miles · Arrive, breathe, begin</p></div>
+      <div class="day-badge" style="background:#dbeafe; color:#1e40af;">17 Jul</div>
+      <div class="card-title"><h3>Dover → Cambridge → York</h3><p>~290 miles total · Arrive, wander, drive on</p></div>
       <span class="chevron">▾</span>
     </div>
     <div class="card-body">
@@ -155,210 +156,241 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
         <div class="stop-icon" style="background:#dbeafe;">🚢</div>
         <div class="stop-content">
           <h4>Dover — you're driving on the LEFT</h4>
-          <p>From the moment you leave the ferry, stay left. At roundabouts (and there are many) go clockwise and give way to the right. Take it steady for the first hour — it becomes natural quickly. Head west on the M20 then M25 briefly, then M4 into Wales. Avoid central London entirely.</p>
+          <p>From the moment you leave the ferry, stay left. At roundabouts (frequent) go clockwise and give way to the right. With almost forty years of left-hand driving in New Zealand behind you, this should come back within the first few miles. Head north on the M20/M25/M11 towards Cambridge, skirting London rather than driving through it.</p>
           <div class="tags"><span class="tag tag-tip">Drive left</span></div>
         </div>
       </div>
       <div class="stop">
-        <div class="stop-icon" style="background:#dcfce7;">⛰️</div>
+        <div class="stop-icon" style="background:#ede9fe;">🎓</div>
         <div class="stop-content">
-          <h4>Brecon Beacons National Park</h4>
-          <p>Your first taste of wild Wales. Open moorland, ancient standing stones, waterfalls, and skies that go on forever. The Beacons are a designated Dark Sky Reserve — if you're camping here, the night sky is extraordinary. The Waterfalls Walk near Pontneddfechan takes you past four separate waterfalls in one 4-mile loop through ancient oak woodland — one of the most beautiful short walks in Britain.</p>
-          <div class="tags"><span class="tag tag-nature">Nature</span><span class="tag tag-nature">Waterfalls</span><span class="tag tag-nature">Hiking</span></div>
-          <a class="map-link" href="https://maps.google.com/?q=Brecon+Beacons+National+Park" target="_blank">📍 Google Maps ↗</a>
-        </div>
-      </div>
-      <div class="warning-box">The green fields of Wales — impossibly green, even by European standards — come from the rain. The dry stone walls dividing those fields are often 400–500 years old. No mortar, no concrete. Just stone on stone. Farmers today still repair them the same way their great-great-grandparents did.</div>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="card-header" onclick="toggle(this)">
-      <div class="day-badge" style="background:#dcfce7; color:#166534;">Day 2</div>
-      <div class="card-title"><h3>Caernarfon & Snowdonia</h3><p>~100 miles north · Castle, mountains, and coffee</p></div>
-      <span class="chevron">▾</span>
-    </div>
-    <div class="card-body">
-      <div class="stop">
-        <div class="stop-icon" style="background:#dbeafe;">🏰</div>
-        <div class="stop-content">
-          <h4>Caernarfon — 1 night here</h4>
-          <p>One of the finest medieval castles in the world — Edward I built it in 1283 to control Wales and it is staggering in scale. But the town itself is the real surprise. There is a street near the castle (Castle Street and the surrounding lanes) lined with independent coffee shops, cafés, and restaurants — exactly what you need after driving. The town walls are largely intact and you can walk sections of them. The Welsh language is very much alive here — you'll hear it in every shop and café.</p>
-          <div class="tags"><span class="tag tag-history">History</span><span class="tag tag-food">Coffee & food</span></div>
-          <div class="from-philip">"The coffee street near the castle — I can't recall the exact name but you'll find it immediately when you park up and walk toward the castle. Independent places, great atmosphere, nothing corporate."</div>
-          <a class="map-link" href="https://maps.google.com/?q=Caernarfon+Castle,+Wales" target="_blank">📍 Google Maps ↗</a>
-        </div>
-      </div>
-      <div class="stop">
-        <div class="stop-icon" style="background:#dcfce7;">🏔️</div>
-        <div class="stop-content">
-          <h4>Mount Snowdon — Wales' highest peak (1,085m)</h4>
-          <p>A perfect warm-up for Ben Nevis. The Llanberis Path is the most popular route — 5 miles each way, allow 5–6 hours return. Or take the historic rack railway to the summit if you'd rather save the legs. On a clear day you can see Ireland. The summit café (Hafod Eryri) is actually a beautiful modern building — a rare case of architecture done right on a mountaintop.</p>
-          <div class="tags"><span class="tag tag-nature">Hiking</span><span class="tag tag-nature">Mountain</span></div>
-          <a class="map-link" href="https://maps.google.com/?q=Snowdon+Mountain+Railway,+Llanberis" target="_blank">📍 Google Maps ↗</a>
-        </div>
-      </div>
-      <div class="stop">
-        <div class="stop-icon" style="background:#dcfce7;">🌿</div>
-        <div class="stop-content">
-          <h4>Snowdonia National Park — hiking & scenery</h4>
-          <p>Beyond Snowdon the park has dozens of trails through glacial valleys, past mirror-still lakes (called llyns), and across moorland dotted with ancient farmsteads. The dry stone walls here are everywhere — hundreds of years old, running up hillsides at angles that seem impossible. The sheep outnumber the people by about 30 to 1.</p>
-          <div class="tags"><span class="tag tag-nature">Nature</span><span class="tag tag-nature">Hiking</span></div>
-          <a class="map-link" href="https://maps.google.com/?q=Snowdonia+National+Park" target="_blank">📍 Google Maps ↗</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="card-header" onclick="toggle(this)">
-      <div class="day-badge" style="background:#dcfce7; color:#166534;">Day 3</div>
-      <div class="card-title"><h3>North Wales Coast & Conwy</h3><p>Castles, sea, and the road east to Chester</p></div>
-      <span class="chevron">▾</span>
-    </div>
-    <div class="card-body">
-      <div class="stop">
-        <div class="stop-icon" style="background:#dbeafe;">🏰</div>
-        <div class="stop-content">
-          <h4>Conwy Castle & Town Walls</h4>
-          <p>UNESCO World Heritage Site. The castle and its complete circuit of town walls — built in the 1280s — are among the best-preserved medieval fortifications in Europe. The town walls are still intact enough to walk. The estuary views from the castle towers are breathtaking.</p>
-          <div class="tags"><span class="tag tag-history">History</span></div>
-          <a class="map-link" href="https://maps.google.com/?q=Conwy+Castle+Wales" target="_blank">📍 Google Maps ↗</a>
-        </div>
-      </div>
-      <div class="stop">
-        <div class="stop-icon" style="background:#fef3c7;">🌊</div>
-        <div class="stop-content">
-          <h4>West Coast beaches & the Isle of Anglesey (optional)</h4>
-          <p>The North Wales coast has beautiful stretches of beach that most tourists never see. The Isle of Anglesey (connected by road bridge) has dramatic cliff scenery, ancient burial chambers (Bryn Celli Ddu), and the village with the longest place name in the world — Llanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogoch. Worth a detour for the photo alone.</p>
-          <div class="tags"><span class="tag tag-nature">Coast</span><span class="tag tag-history">History</span></div>
-          <a class="map-link" href="https://maps.google.com/?q=Isle+of+Anglesey,+Wales" target="_blank">📍 Google Maps ↗</a>
-        </div>
-      </div>
-      <div class="stop">
-        <div class="stop-icon" style="background:#dcfce7;">🐄</div>
-        <div class="stop-content">
-          <h4>Farm stays in Wales — worth considering</h4>
-          <p>Wales has some of the best farmstay accommodation in Britain. You wake to roosters, sheep outside the window, and a full Welsh breakfast. If you don't mind the smell of cow and the sound of farm — it's an experience most tourists never have. Genuinely warm Welsh hospitality. Search <strong>Airbnb "farm Wales"</strong> or <strong>Cool Camping Wales</strong> for options along your route.</p>
-          <div class="tags"><span class="tag tag-nature">Farm life</span></div>
-          <a class="map-link" href="https://www.coolcamping.com/campsites/uk/wales" target="_blank">Cool Camping Wales ↗</a>
-        </div>
-      </div>
-      <div class="info-box">🧱 <strong>The dry stone walls:</strong> As you drive through Wales and later the Lake District, look at the field boundaries. Those walls — running for miles across every hillside — were built without a single drop of mortar, starting in the 1500s and continuing through the 1800s. Each stone was placed by hand, shaped by eye, locked by weight and balance alone. Many are still standing after 400 years. They are as much a part of the landscape as the mountains themselves.</div>
-    </div>
-  </div>
-</div>
-
-<!-- CHESTER -->
-<div id="chester" class="section">
-  <div class="section-intro">
-    <strong>Chester — half a day to a full day.</strong> Chester is one of England's most extraordinary small cities. Founded by the Romans in 79 AD as a fortress called Deva Victrix, it has been continuously inhabited for nearly 2,000 years. Park outside the walls and walk in — everything worth seeing is within the walls.
-  </div>
-
-  <div class="card open">
-    <div class="card-header" onclick="toggle(this)">
-      <div class="day-badge" style="background:#ede9fe; color:#5b21b6;">Day 4</div>
-      <div class="card-title"><h3>Chester</h3><p>Roman walls · The Rows · Cathedral · Market</p></div>
-      <span class="chevron">▾</span>
-    </div>
-    <div class="card-body">
-      <div class="stop">
-        <div class="stop-icon" style="background:#dbeafe;">🏛️</div>
-        <div class="stop-content">
-          <h4>The Roman Walls — most complete in Britain</h4>
-          <p>You can walk the complete 2-mile circuit of Chester's city walls — the most complete Roman and medieval walls in Britain. The walk takes about 45 minutes and gives you views over the city, the River Dee, and the surrounding countryside. The walls date from 79 AD with medieval additions. Free to walk any time.</p>
-          <div class="tags"><span class="tag tag-history">Roman</span><span class="tag tag-history">Medieval</span></div>
-          <a class="map-link" href="https://maps.google.com/?q=Chester+City+Walls" target="_blank">📍 Google Maps ↗</a>
-        </div>
-      </div>
-      <div class="stop">
-        <div class="stop-icon" style="background:#fef3c7;">🛍️</div>
-        <div class="stop-content">
-          <h4>The Rows — unique in the world</h4>
-          <p>Chester's Rows are a two-level covered shopping gallery running along the four main streets — nothing else like them exists anywhere in the world. The lower level is street level, the upper level is a covered walkway lined with shops and cafés with black-and-white timber-framed facades. The exact origin is debated but they date from at least the 13th century. Walk both levels.</p>
-          <div class="tags"><span class="tag tag-history">Unique</span><span class="tag tag-food">Shopping & cafés</span></div>
-          <a class="map-link" href="https://maps.google.com/?q=The+Rows,+Chester" target="_blank">📍 Google Maps ↗</a>
+          <h4>Cambridge — a few hours' wander</h4>
+          <p>Park on the outskirts (Park & Ride is easiest — city-centre parking is scarce and expensive) and walk in. The Backs — the green riverside walk behind King's, Trinity, and St John's Colleges — is the classic view of Cambridge and free to walk. King's College Chapel is a Gothic masterpiece, arguably the finest single building in Cambridge; punting on the River Cam past the colleges is touristy but genuinely lovely on a sunny afternoon. The Market Square in the centre has been trading since medieval times — good for a quick lunch.</p>
+          <div class="tags"><span class="tag tag-history">University city</span><span class="tag tag-nature">River Cam</span></div>
+          <a class="map-link" href="https://maps.google.com/?q=King's+College+Chapel,+Cambridge" target="_blank">📍 Google Maps ↗</a>
         </div>
       </div>
       <div class="stop">
         <div class="stop-icon" style="background:#dbeafe;">⛪</div>
         <div class="stop-content">
-          <h4>Chester Cathedral</h4>
-          <p>A stunning red sandstone cathedral with one of the finest medieval cloisters in England. The refectory (café) inside the cathedral is worth stopping at for lunch — beautiful vaulted ceiling, excellent food. Don't miss the medieval choir stalls with their carved misericords.</p>
-          <div class="tags"><span class="tag tag-history">History</span><span class="tag tag-food">Lunch stop</span></div>
-          <a class="map-link" href="https://maps.google.com/?q=Chester+Cathedral" target="_blank">📍 Google Maps ↗</a>
+          <h4>York — your first night</h4>
+          <p>An hour or two further north via the A1(M). York is the finest medieval city in England, founded by the Romans in 71 AD as Eboracum, later the Viking city of Jorvik. Every layer of its history is still visible in the streets. You'll pass back through here on the return leg of your own trip is not planned, so make the most of this one evening — a walk along a stretch of the City Walls or through the Shambles after the day-trippers have gone is a lovely way to end a long driving day.</p>
+          <div class="tags"><span class="tag tag-history">Medieval</span><span class="tag tag-tip">Overnight stop</span></div>
+          <a class="map-link" href="https://maps.google.com/?q=York+Minster" target="_blank">📍 Google Maps ↗</a>
         </div>
       </div>
       <div class="stop">
-        <div class="stop-icon" style="background:#ede9fe;">🏇</div>
+        <div class="stop-icon" style="background:#dbeafe;">⛪</div>
         <div class="stop-content">
-          <h4>Chester Racecourse</h4>
-          <p>The oldest racecourse in Britain — horse racing has taken place on The Roodee since 1539. Even if there's no race on, the setting (inside the Roman walls, overlooking the River Dee) is remarkable.</p>
-          <div class="tags"><span class="tag tag-history">History</span></div>
-          <a class="map-link" href="https://maps.google.com/?q=Chester+Racecourse" target="_blank">📍 Google Maps ↗</a>
-        </div>
-      </div>
-      <div class="stop">
-        <div class="stop-icon" style="background:#fef3c7;">🥕</div>
-        <div class="stop-content">
-          <h4>Chester Market</h4>
-          <p>The indoor market on Princess Street is a real local market — butchers, bakers, greengrocers, deli stalls. Open Monday to Saturday. The covered Victorian market hall is beautiful. A world away from tourist shops.</p>
-          <div class="tags"><span class="tag tag-market">Market</span><span class="tag tag-food">Local food</span></div>
-          <a class="map-link" href="https://maps.google.com/?q=Chester+Market" target="_blank">📍 Google Maps ↗</a>
+          <h4>If you have a spare hour in York</h4>
+          <p>York Minster — 252 years to build, the world's largest area of medieval stained glass in the Great East Window — is close to wherever you'll be staying and worth even a brief look before bed or over breakfast. The Shambles, a medieval street so narrow the upper floors nearly touch overhead, is two minutes from the Minster and said to have inspired Diagon Alley.</p>
+          <div class="tags"><span class="tag tag-history">Gothic cathedral</span></div>
         </div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- LIVERPOOL -->
-<div id="liverpool" class="section">
+<!-- EDINBURGH -->
+<div id="edinburgh" class="section">
   <div class="section-intro">
-    <strong>Liverpool — 1 night.</strong> Liverpool is unlike any other English city. It has a raw energy, a black humour, and a genuine warmth that is all its own. Born from the sea trade, shaped by immigration, and defined — for better or worse — by the Beatles. Philip was born here and has a very specific recommendation that has nothing to do with the Beatles.
+    <strong>18–19 July — York to Edinburgh, along the coast, then a full day.</strong> Take the coast road north where you can rather than the inland A1 — the Northumberland coastline (Bamburgh, Holy Island/Lindisfarne if the tide table allows, Berwick-upon-Tweed) is spectacular and largely overlooked by drivers rushing straight up the motorway.
   </div>
 
   <div class="card open">
     <div class="card-header" onclick="toggle(this)">
-      <div class="day-badge" style="background:#fee2e2; color:#991b1b;">Day 4–5</div>
-      <div class="card-title"><h3>Liverpool</h3><p>Speke Hall · Albert Dock · Waterfront</p></div>
+      <div class="day-badge" style="background:#dbeafe; color:#1e40af;">18 Jul</div>
+      <div class="card-title"><h3>York → Edinburgh, coastal route</h3><p>~230 miles · Castles and coastline on the way</p></div>
       <span class="chevron">▾</span>
     </div>
     <div class="card-body">
       <div class="stop">
-        <div class="stop-icon" style="background:#fef3c7;">🏡</div>
+        <div class="stop-icon" style="background:#dbeafe;">🏰</div>
         <div class="stop-content">
-          <h4>Speke Hall — Philip's personal MUST</h4>
-          <p>A Tudor half-timbered manor house on the banks of the Mersey, surrounded by woodland and walled gardens. It dates from 1530. Most tourists never find it — it sits just a mile from Liverpool Airport and yet feels completely hidden from the modern world. Philip cycled here as a child and fell in love with it before he was 10 years old. The Great Hall, the Priest Holes, the ancient yew trees in the courtyard — when you see it you will understand why. If he could, he'd live there.</p>
-          <div class="tags"><span class="tag tag-history">Tudor history</span><span class="tag tag-nature">Gardens</span></div>
-          <div class="from-philip">"This is the one place in Liverpool that I need you to see. Not the Beatles. Not the docks. Speke Hall. I used to ride there on my bicycle as a kid and I adored it before I even understood why. When you stand in that courtyard you'll feel something very old and very real."</div>
-          <a class="map-link" href="https://maps.google.com/?q=Speke+Hall,+Liverpool" target="_blank">📍 Google Maps ↗</a>
+          <h4>Bamburgh Castle & Holy Island (Lindisfarne)</h4>
+          <p>Bamburgh Castle sits dramatically on a basalt outcrop above a huge, near-empty beach — one of the great views of the English coast. Holy Island (Lindisfarne) is tidal — the causeway floods twice a day, so check the safe crossing times before you detour out; if the tide is against you, admire it from the mainland instead and keep moving.</p>
+          <div class="tags"><span class="tag tag-history">Castle</span><span class="tag tag-nature">Coast</span></div>
+          <a class="map-link" href="https://maps.google.com/?q=Bamburgh+Castle" target="_blank">📍 Google Maps ↗</a>
         </div>
       </div>
       <div class="stop">
-        <div class="stop-icon" style="background:#dbeafe;">🚢</div>
+        <div class="stop-icon" style="background:#dbeafe;">🏛️</div>
         <div class="stop-content">
-          <h4>Albert Dock & the Waterfront</h4>
-          <p>The Albert Dock is one of the finest examples of Victorian dock architecture in the world — Grade I listed, sitting right on the Mersey waterfront. It houses the Beatles Story museum, Tate Liverpool (excellent contemporary art), the Merseyside Maritime Museum, and dozens of restaurants and bars. Walk the full length of the waterfront at sunset — the views across the Mersey are stunning. The Royal Liver Building with its famous Liver Birds is just north of the dock.</p>
-          <div class="tags"><span class="tag tag-history">History</span><span class="tag tag-food">Restaurants</span></div>
-          <a class="map-link" href="https://maps.google.com/?q=Albert+Dock,+Liverpool" target="_blank">📍 Google Maps ↗</a>
+          <h4>Berwick-upon-Tweed — the border town</h4>
+          <p>England's northernmost town, changed hands between England and Scotland more than a dozen times through the Middle Ages. Complete Elizabethan town walls, a good stretch-your-legs stop before crossing into Scotland proper.</p>
+          <div class="tags"><span class="tag tag-history">History</span></div>
+          <a class="map-link" href="https://maps.google.com/?q=Berwick-upon-Tweed" target="_blank">📍 Google Maps ↗</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card open">
+    <div class="card-header" onclick="toggle(this)">
+      <div class="day-badge" style="background:#dbeafe; color:#1e40af;">19 Jul</div>
+      <div class="card-title"><h3>Edinburgh — full day</h3><p>Castle · Old Town · Grassmarket · Arthur's Seat · Whisky</p></div>
+      <span class="chevron">▾</span>
+    </div>
+    <div class="card-body">
+      <div class="stop">
+        <div class="stop-icon" style="background:#dbeafe;">🏰</div>
+        <div class="stop-content">
+          <h4>Edinburgh Castle</h4>
+          <p>Perched on an ancient volcanic plug 430 feet above the city. Inside: the Scottish Crown Jewels, the Stone of Destiny, and the 15th-century cannon Mons Meg. Book tickets in advance — July queues without a booking are brutal. Allow 2–3 hours.</p>
+          <div class="tags"><span class="tag tag-history">History</span></div>
+          <a class="map-link" href="https://maps.google.com/?q=Edinburgh+Castle" target="_blank">📍 Google Maps ↗</a>
         </div>
       </div>
       <div class="stop">
-        <div class="stop-icon" style="background:#fef3c7;">🎸</div>
+        <div class="stop-icon" style="background:#dbeafe;">🏚️</div>
         <div class="stop-content">
-          <h4>The Beatles Story & Cavern Quarter</h4>
-          <p>The Beatles Story museum at the Albert Dock tells the full story from Hamburg to Abbey Road. The Cavern Club on Mathew Street (a recreation of the original) still has live music most nights. Whether you're a fan or not, the story of four working-class Liverpool lads who changed the world is genuinely fascinating.</p>
-          <div class="tags"><span class="tag tag-history">Culture</span></div>
-          <a class="map-link" href="https://maps.google.com/?q=The+Beatles+Story,+Liverpool" target="_blank">📍 Google Maps ↗</a>
+          <h4>The Royal Mile & the Closes</h4>
+          <p>Runs from the Castle down to the Palace of Holyroodhouse. The real discoveries are the closes — narrow medieval alleyways off both sides. Mary King's Close can be visited on a guided tour; Riddle's Court and White Horse Close are among the best.</p>
+          <div class="tags"><span class="tag tag-history">Medieval</span></div>
+          <a class="map-link" href="https://maps.google.com/?q=Royal+Mile,+Edinburgh" target="_blank">📍 Google Maps ↗</a>
         </div>
       </div>
       <div class="stop">
-        <div class="stop-icon" style="background:#dcfce7;">🏛️</div>
+        <div class="stop-icon" style="background:#fef3c7;">🍺</div>
         <div class="stop-content">
-          <h4>St George's Hall</h4>
-          <p>A neoclassical masterpiece that rivals anything in Athens or Rome — sitting right in the city centre. Often called the finest neoclassical building in Europe. Free to view from outside; guided tours available inside.</p>
-          <div class="tags"><span class="tag tag-history">Architecture</span></div>
-          <a class="map-link" href="https://maps.google.com/?q=St+George's+Hall,+Liverpool" target="_blank">📍 Google Maps ↗</a>
+          <h4>The Grassmarket & Victoria Street</h4>
+          <p>An open square below the castle walls, once Edinburgh's market and execution site, now pubs and restaurants. Victoria Street, curving up from it, is one of the most photographed streets in Scotland and a likely inspiration for Diagon Alley.</p>
+          <div class="tags"><span class="tag tag-food">Pubs & restaurants</span></div>
+          <a class="map-link" href="https://maps.google.com/?q=Grassmarket,+Edinburgh" target="_blank">📍 Google Maps ↗</a>
+        </div>
+      </div>
+      <div class="stop">
+        <div class="stop-icon" style="background:#dcfce7;">⛰️</div>
+        <div class="stop-content">
+          <h4>Arthur's Seat</h4>
+          <p>A 250-million-year-old volcano rising 822 feet right out of the city — 45 minutes to the summit, 360-degree views over Edinburgh and the Firth of Forth. Free, always open. Go early before the crowds.</p>
+          <div class="tags"><span class="tag tag-nature">Summit</span><span class="tag tag-nature">Free</span></div>
+          <a class="map-link" href="https://maps.google.com/?q=Arthur's+Seat,+Edinburgh" target="_blank">📍 Google Maps ↗</a>
+        </div>
+      </div>
+      <div class="stop">
+        <div class="stop-icon" style="background:#ede9fe;">🥃</div>
+        <div class="stop-content">
+          <h4>Scotch Whisky Experience & Greyfriars Kirkyard</h4>
+          <p>A barrel ride through the history of Scotch on the Royal Mile, plus a tasting. Nearby, Greyfriars Kirkyard — Tom Riddell's gravestone is here — is atmospheric in any weather.</p>
+          <div class="tags"><span class="tag tag-food">Whisky</span></div>
+          <a class="map-link" href="https://maps.google.com/?q=Greyfriars+Kirkyard,+Edinburgh" target="_blank">📍 Google Maps ↗</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FORT WILLIAM -->
+<div id="fortwilliam" class="section">
+  <div class="section-intro">
+    <strong>20–22 July — Fort William, booked for three nights.</strong> The wild heart of the trip. Drive up via the A82 through Glencoe or via Loch Ness — either way, take it slowly and stop often.
+  </div>
+
+  <div class="card open">
+    <div class="card-header" onclick="toggle(this)">
+      <div class="day-badge" style="background:#dcfce7; color:#166534;">20 Jul</div>
+      <div class="card-title"><h3>Edinburgh → Fort William</h3><p>~135 miles · Loch Ness or Glencoe on the way</p></div>
+      <span class="chevron">▾</span>
+    </div>
+    <div class="card-body">
+      <div class="stop">
+        <div class="stop-icon" style="background:#dbeafe;">🐉</div>
+        <div class="stop-content">
+          <h4>Loch Ness</h4>
+          <p>23 miles long, 755 feet deep, more fresh water than all the lakes in England and Wales combined — its peat-dark water is why Nessie has stayed so elusive. Urquhart Castle on the western shore is the classic viewpoint. The southern shore road (B862) is quieter and just as dramatic.</p>
+          <div class="tags"><span class="tag tag-nature">Loch</span><span class="tag tag-history">Castle ruins</span></div>
+          <a class="map-link" href="https://maps.google.com/?q=Loch+Ness,+Scotland" target="_blank">📍 Google Maps ↗</a>
+        </div>
+      </div>
+      <div class="stop">
+        <div class="stop-icon" style="background:#dcfce7;">🌄</div>
+        <div class="stop-content">
+          <h4>Glencoe</h4>
+          <p>Drive slowly, stop, walk. A glacial valley of extraordinary drama — the Three Sisters dropping straight to the valley floor. Site of the 1692 Glencoe Massacre; the visitor centre explains it well.</p>
+          <div class="tags"><span class="tag tag-nature">Scenery</span><span class="tag tag-history">History</span></div>
+          <a class="map-link" href="https://maps.google.com/?q=Glencoe,+Scotland" target="_blank">📍 Google Maps ↗</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card open">
+    <div class="card-header" onclick="toggle(this)">
+      <div class="day-badge" style="background:#dcfce7; color:#166534;">21–22 Jul</div>
+      <div class="card-title"><h3>Ben Nevis & Fort William</h3><p>The reason for the whole trip</p></div>
+      <span class="chevron">▾</span>
+    </div>
+    <div class="card-body">
+      <div class="stop">
+        <div class="stop-icon" style="background:#dcfce7;">🏔️</div>
+        <div class="stop-content">
+          <h4>Ben Nevis (1,345m)</h4>
+          <p>Britain's highest mountain. The Mountain Track starts at the Ben Nevis Visitor Centre — 17km return, 1,345m of ascent, allow 7–9 hours. Start before 8am. Proper hiking boots, waterproofs, warm layers, 2 litres of water minimum, and food. Use one of your two full days here for the climb and keep the other as a weather buffer or for a gentler day around the town and Loch Linnhe.</p>
+          <div class="tags"><span class="tag tag-nature">Summit</span><span class="tag tag-nature">Full day hike</span></div>
+          <div class="warning-box">⚠️ <strong>Ben Nevis safety:</strong> Check the mountain forecast at mwis.org.uk the day before. Tell your accommodation your intended route and expected return. The summit can be 15°C colder than Fort William, and often in cloud even in July.</div>
+          <a class="map-link" href="https://maps.google.com/?q=Ben+Nevis+Visitor+Centre,+Fort+William" target="_blank">📍 Google Maps ↗</a>
+          <br><a class="map-link" href="https://www.mwis.org.uk" target="_blank">Mountain weather forecast ↗</a>
+        </div>
+      </div>
+      <div class="stop">
+        <div class="stop-icon" style="background:#dcfce7;">🦟</div>
+        <div class="stop-content">
+          <h4>Scottish midges</h4>
+          <p>Present in vast numbers near water and vegetation from June to August, worst at dawn and dusk. Buy Smidge or Avon Skin So Soft before you arrive — it genuinely works. As you've already noticed from your own bookings, you won't be alone in the Highlands this July, so book any extra activities (boat trips, gondola) as early as you can.</p>
+          <div class="tags"><span class="tag tag-tip">Practical</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- HADRIAN'S WALL / CARLISLE -->
+<div id="hadrianswall" class="section">
+  <div class="section-intro">
+    <strong>23 July — Fort William to Carlisle, via Glasgow.</strong> A long driving day south, but it's the one day with a genuine wildcard built in: Hadrian's Wall, weather-dependent camping.
+  </div>
+
+  <div class="card open">
+    <div class="card-header" onclick="toggle(this)">
+      <div class="day-badge" style="background:#fee2e2; color:#991b1b;">23 Jul</div>
+      <div class="card-title"><h3>Fort William → Glasgow → Carlisle</h3><p>~220 miles · Hadrian's Wall, camping if fine</p></div>
+      <span class="chevron">▾</span>
+    </div>
+    <div class="card-body">
+      <div class="stop">
+        <div class="stop-icon" style="background:#dbeafe;">🏙️</div>
+        <div class="stop-content">
+          <h4>Glasgow — a driving stop, not a destination today</h4>
+          <p>You'll pass through rather than linger, but if you want an hour, the Kelvingrove Art Gallery is free and excellent, and the West End around Byres Road has good coffee for a break. Otherwise treat Glasgow as the halfway point of a long day and push on south.</p>
+          <div class="tags"><span class="tag tag-tip">Waypoint</span></div>
+          <a class="map-link" href="https://maps.google.com/?q=Kelvingrove+Art+Gallery,+Glasgow" target="_blank">📍 Google Maps ↗</a>
+        </div>
+      </div>
+      <div class="stop">
+        <div class="stop-icon" style="background:#dbeafe;">🧱</div>
+        <div class="stop-content">
+          <h4>Hadrian's Wall</h4>
+          <p>Built from 122 AD to mark the northern frontier of the Roman Empire — 73 miles coast to coast, and the best-preserved stretches are right around Carlisle and Housesteads to the east. Housesteads Roman Fort is the most complete fort on the whole wall, with dramatic views along the ridge the wall follows. Birdoswald Roman Fort, closer to Carlisle, is quieter and equally rewarding, with a good stretch of wall you can walk along. Even an hour walking a section of the wall at golden hour is worth the detour.</p>
+          <div class="tags"><span class="tag tag-history">Roman</span><span class="tag tag-nature">Walking</span></div>
+          <a class="map-link" href="https://maps.google.com/?q=Housesteads+Roman+Fort" target="_blank">📍 Google Maps ↗</a>
+          <br><a class="map-link" href="https://maps.google.com/?q=Birdoswald+Roman+Fort" target="_blank">📍 Birdoswald (closer to Carlisle) ↗</a>
+        </div>
+      </div>
+      <div class="stop">
+        <div class="stop-icon" style="background:#dcfce7;">⛺</div>
+        <div class="stop-content">
+          <h4>Camping near Carlisle — weather permitting</h4>
+          <p>There are decent campsites close to Hadrian's Wall and the Eden Valley around Carlisle, with easy access to the wall itself. Since you're deciding this one on the weather, have a Carlisle B&B or guesthouse as a fallback in mind before you set off — after a long drive from Fort William, you don't want to be searching for a dry bed at 9pm.</p>
+          <div class="tags"><span class="tag tag-nature">Camping</span><span class="tag tag-tip">Weather-dependent</span></div>
+        </div>
+      </div>
+      <div class="stop">
+        <div class="stop-icon" style="background:#dbeafe;">🏛️</div>
+        <div class="stop-content">
+          <h4>Carlisle itself</h4>
+          <p>A proper Border city with its own castle, dating to 1092 and fought over repeatedly by England and Scotland. Worth a short walk if you arrive with any daylight left — the cathedral and castle are both compact enough for an hour between the wall and dinner.</p>
+          <div class="tags"><span class="tag tag-history">Border history</span></div>
+          <a class="map-link" href="https://maps.google.com/?q=Carlisle+Castle" target="_blank">📍 Google Maps ↗</a>
         </div>
       </div>
     </div>
@@ -368,258 +400,261 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
 <!-- LAKE DISTRICT -->
 <div id="lakes" class="section">
   <div class="section-intro">
-    <strong>The Lake District — 2 nights, at least.</strong> England's largest national park and its most beloved. Sixteen major lakes, hundreds of tarns (small mountain lakes), and fells (hills) that have inspired poets, painters, and writers for three centuries. Wordsworth was born here and never really left. Beatrix Potter wrote Peter Rabbit here. The dry stone walls you first saw in Wales continue here — running up every fell-side in grey lines that have been standing since Tudor times. The towns are small, the pubs are excellent, and the walking is world-class. Ambleside or Grasmere are your best bases.
+    <strong>24–25 July — the Lake District, then on to Liverpool.</strong> England's largest and most beloved national park. Sixteen major lakes, hundreds of tarns, and fells that have inspired poets, painters, and writers for three centuries. Ambleside or Grasmere make good bases for your one full day here.
   </div>
 
   <div class="card open">
     <div class="card-header" onclick="toggle(this)">
-      <div class="day-badge" style="background:#dcfce7; color:#166534;">Days 5–7</div>
-      <div class="card-title"><h3>The Lake District</h3><p>Windermere · Fells · Waterfalls · Dry stone walls</p></div>
+      <div class="day-badge" style="background:#dcfce7; color:#166534;">24 Jul</div>
+      <div class="card-title"><h3>Carlisle → Lake District</h3><p>~40 miles · Short drive, settle in</p></div>
       <span class="chevron">▾</span>
     </div>
     <div class="card-body">
       <div class="stop">
         <div class="stop-icon" style="background:#dbeafe;">🌊</div>
         <div class="stop-content">
-          <h4>Lake Windermere — England's longest lake</h4>
-          <p>10.5 miles long, a mile wide, and 219 feet deep. The lake itself is beautiful but what makes Windermere special is what surrounds it — wooded hillsides, stone jetties, white-sailed boats, and the fells rising behind. Take the steam ferry across from Bowness — it's been running since 1454. Hire a kayak or rowing boat from Bowness Bay. The eastern shore has a gentler walking path (around 10 miles) with constant lake views.</p>
-          <div class="tags"><span class="tag tag-nature">Lake</span><span class="tag tag-nature">Kayaking</span><span class="tag tag-nature">Walking</span></div>
-          <a class="map-link" href="https://maps.google.com/?q=Lake+Windermere,+Cumbria" target="_blank">📍 Google Maps ↗</a>
+          <h4>A short driving day — arrive early, enjoy the afternoon</h4>
+          <p>Carlisle to the northern Lakes is under an hour, so you should arrive with most of the day still ahead of you. Ullswater, on the way in from the north, is often called the most beautiful of all the lakes and is a good first stop — quieter than Windermere, ringed by fells.</p>
+          <div class="tags"><span class="tag tag-nature">Lake</span></div>
+          <a class="map-link" href="https://maps.google.com/?q=Ullswater,+Lake+District" target="_blank">📍 Google Maps ↗</a>
         </div>
       </div>
       <div class="stop">
         <div class="stop-icon" style="background:#dcfce7;">💧</div>
         <div class="stop-content">
           <h4>Aira Force Waterfall</h4>
-          <p>One of the most dramatic waterfalls in England — a 70-foot drop through a wooded gorge into a pool below. A short walk from the car park (about 20 minutes each way). Wordsworth wrote two poems about this exact spot. In wet weather the falls are thunderous.</p>
+          <p>A dramatic 70-foot drop through a wooded gorge, on the Ullswater shore. A 20-minute walk from the car park each way. Wordsworth wrote two poems about this exact spot.</p>
           <div class="tags"><span class="tag tag-nature">Waterfall</span><span class="tag tag-nature">Short walk</span></div>
           <a class="map-link" href="https://maps.google.com/?q=Aira+Force+Waterfall,+Lake+District" target="_blank">📍 Google Maps ↗</a>
         </div>
       </div>
+    </div>
+  </div>
+
+  <div class="card open">
+    <div class="card-header" onclick="toggle(this)">
+      <div class="day-badge" style="background:#dcfce7; color:#166534;">25 Jul</div>
+      <div class="card-title"><h3>Lake District full day, then drive to Liverpool</h3><p>Windermere · fells · dry stone walls</p></div>
+      <span class="chevron">▾</span>
+    </div>
+    <div class="card-body">
       <div class="stop">
-        <div class="stop-icon" style="background:#dcfce7;">⛰️</div>
+        <div class="stop-icon" style="background:#dbeafe;">🌊</div>
         <div class="stop-content">
-          <h4>Scafell Pike — England's highest (978m)</h4>
-          <p>If you're planning Ben Nevis, Scafell Pike is an outstanding warm-up. The Borrowdale valley approach is the most scenic — through ancient oak woodland and past the Stockley Bridge packhorse bridge. Allow 6–7 hours return. The Borrowdale valley itself is extraordinary — England's wettest valley and arguably its most beautiful, with ancient farms, stone bridges, and the Bowder Stone (a 2,000-tonne boulder balanced on one point).</p>
-          <div class="tags"><span class="tag tag-nature">Summit hike</span><span class="tag tag-nature">Ben Nevis prep</span></div>
-          <a class="map-link" href="https://maps.google.com/?q=Scafell+Pike,+Lake+District" target="_blank">📍 Google Maps ↗</a>
+          <h4>Lake Windermere</h4>
+          <p>England's longest lake — 10.5 miles, wooded hillsides, stone jetties, fells rising behind. Take the steam ferry across from Bowness, running since 1454, or hire a kayak or rowing boat.</p>
+          <div class="tags"><span class="tag tag-nature">Lake</span><span class="tag tag-nature">Kayaking</span></div>
+          <a class="map-link" href="https://maps.google.com/?q=Lake+Windermere,+Cumbria" target="_blank">📍 Google Maps ↗</a>
         </div>
       </div>
       <div class="stop">
         <div class="stop-icon" style="background:#fef3c7;">✍️</div>
         <div class="stop-content">
-          <h4>Dove Cottage, Grasmere — Wordsworth's home</h4>
-          <p>William Wordsworth wrote his greatest poetry here — including the Prelude, his epic autobiographical poem about growing up in this exact landscape. The cottage is tiny and perfectly preserved. Grasmere village is beautiful — and the Grasmere Gingerbread Shop (open since 1854) sells a spicy gingerbread made to a secret recipe that is completely unlike anything else you've tasted. Not optional.</p>
+          <h4>Dove Cottage, Grasmere</h4>
+          <p>Wordsworth wrote his greatest poetry here. Grasmere village is beautiful, and the Grasmere Gingerbread Shop (open since 1854) sells a spicy gingerbread to a secret recipe — not optional.</p>
           <div class="tags"><span class="tag tag-history">Literature</span><span class="tag tag-food">Gingerbread</span></div>
           <a class="map-link" href="https://maps.google.com/?q=Dove+Cottage,+Grasmere" target="_blank">📍 Google Maps ↗</a>
         </div>
       </div>
       <div class="stop">
-        <div class="stop-icon" style="background:#fef3c7;">🐇</div>
+        <div class="stop-icon" style="background:#dcfce7;">⛰️</div>
         <div class="stop-content">
-          <h4>Hill Top — Beatrix Potter's farm, Near Sawrey</h4>
-          <p>Beatrix Potter bought this 17th-century farmhouse with the royalties from Peter Rabbit and lived here for the rest of her life. She was also a pioneering conservationist who left her 4,000-acre estate to the National Trust. The farm is exactly as she left it. Small, quiet, and surprisingly moving.</p>
-          <div class="tags"><span class="tag tag-history">Literary history</span></div>
-          <a class="map-link" href="https://maps.google.com/?q=Hill+Top,+Near+Sawrey,+Lake+District" target="_blank">📍 Google Maps ↗</a>
+          <h4>If you have energy left: a short fell walk</h4>
+          <p>You've already done Ben Nevis, so there's no need to chase Scafell Pike too — but a shorter fell like Catbells above Derwentwater (about 2 hours round trip, easy scramble) gives you the classic Lakeland view without eating the whole day.</p>
+          <div class="tags"><span class="tag tag-nature">Short hike</span></div>
+          <a class="map-link" href="https://maps.google.com/?q=Catbells,+Lake+District" target="_blank">📍 Google Maps ↗</a>
         </div>
       </div>
-      <div class="info-box">🧱 <strong>The dry stone walls continue here.</strong> In the Lake District they're made from the local grey slate and volcanic rock — different from the limestone of Wales but built the same way, without mortar, by the same method. Miles of them running up the fells at angles that seem impossible. Some sections date to the 1500s. They are as much a part of the Lake District as the lakes themselves.</div>
+      <div class="info-box">🧱 <strong>The dry stone walls.</strong> Made from local grey slate and volcanic rock, built without mortar since the 1500s, running up the fells at angles that seem impossible. As much a part of the Lake District as the lakes themselves — you'll have already seen the limestone version of the same craft in Wales, right at the end of your trip.</div>
     </div>
   </div>
 </div>
 
-<!-- SCOTLAND -->
-<div id="scotland" class="section">
+<!-- LIVERPOOL -->
+<div id="liverpool" class="section">
   <div class="section-intro">
-    <strong>Scotland — 4–5 days.</strong> Cross the border on the A7 or A74(M) — the country changes immediately. The light is different, the landscape is wilder, and the scale of everything increases. Take country roads whenever you can. The drive north through Dumfries and Galloway, or up through the Trossachs, is as beautiful as anything in Switzerland.
+    <strong>25–26 July — Liverpool, one night.</strong> Unlike any other English city — raw energy, black humour, genuine warmth. Philip was born here and has a very specific recommendation that has nothing to do with the Beatles.
   </div>
 
   <div class="card open">
     <div class="card-header" onclick="toggle(this)">
-      <div class="day-badge" style="background:#dbeafe; color:#1e40af;">Days 8–9</div>
-      <div class="card-title"><h3>Edinburgh</h3><p>Castle · Old Town · Grassmarket · Arthur's Seat · Whisky</p></div>
+      <div class="day-badge" style="background:#fee2e2; color:#991b1b;">25–26 Jul</div>
+      <div class="card-title"><h3>Liverpool</h3><p>Speke Hall · Albert Dock · Waterfront</p></div>
+      <span class="chevron">▾</span>
+    </div>
+    <div class="card-body">
+      <div class="stop">
+        <div class="stop-icon" style="background:#fef3c7;">🏡</div>
+        <div class="stop-content">
+          <h4>Speke Hall — Philip's personal MUST</h4>
+          <p>A Tudor half-timbered manor house on the banks of the Mersey, dating from 1530. Most tourists never find it — a mile from Liverpool Airport, yet feels hidden from the modern world entirely.</p>
+          <div class="tags"><span class="tag tag-history">Tudor history</span><span class="tag tag-nature">Gardens</span></div>
+          <div class="from-philip">"This is the one place in Liverpool that I need you to see. Not the Beatles. Not the docks. Speke Hall. I used to ride there on my bicycle as a kid and I adored it before I even understood why. Philip"</div>
+          <a class="map-link" href="https://maps.google.com/?q=Speke+Hall,+Liverpool" target="_blank">📍 Google Maps ↗</a>
+        </div>
+      </div>
+      <div class="stop">
+        <div class="stop-icon" style="background:#dbeafe;">🚢</div>
+        <div class="stop-content">
+          <h4>Albert Dock & the Waterfront</h4>
+          <p>Grade I listed Victorian dock architecture right on the Mersey. Houses the Beatles Story, Tate Liverpool, the Merseyside Maritime Museum, and plenty of restaurants. Walk the waterfront at sunset — the views across the Mersey are stunning.</p>
+          <div class="tags"><span class="tag tag-history">History</span><span class="tag tag-food">Restaurants</span></div>
+          <a class="map-link" href="https://maps.google.com/?q=Albert+Dock,+Liverpool" target="_blank">📍 Google Maps ↗</a>
+        </div>
+      </div>
+      <div class="stop">
+        <div class="stop-icon" style="background:#dcfce7;">🏛️</div>
+        <div class="stop-content">
+          <h4>St George's Hall</h4>
+          <p>A neoclassical masterpiece often called the finest in Europe, sitting right in the city centre. Free to view from outside.</p>
+          <div class="tags"><span class="tag tag-history">Architecture</span></div>
+          <a class="map-link" href="https://maps.google.com/?q=St+George's+Hall,+Liverpool" target="_blank">📍 Google Maps ↗</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CHESTER -->
+<div id="chester" class="section">
+  <div class="section-intro">
+    <strong>26 July — Liverpool to Chester, then on to Caernarfon.</strong> A short hop south — Chester is worth half a day on your way into Wales.
+  </div>
+
+  <div class="card open">
+    <div class="card-header" onclick="toggle(this)">
+      <div class="day-badge" style="background:#ede9fe; color:#5b21b6;">26 Jul</div>
+      <div class="card-title"><h3>Chester</h3><p>Roman walls · The Rows · Cathedral</p></div>
+      <span class="chevron">▾</span>
+    </div>
+    <div class="card-body">
+      <div class="stop">
+        <div class="stop-icon" style="background:#dbeafe;">🏛️</div>
+        <div class="stop-content">
+          <h4>The Roman Walls — most complete in Britain</h4>
+          <p>Walk the complete 2-mile circuit of Chester's city walls, dating from 79 AD with medieval additions — about 45 minutes, free at any time, with views over the city and the River Dee.</p>
+          <div class="tags"><span class="tag tag-history">Roman</span></div>
+          <a class="map-link" href="https://maps.google.com/?q=Chester+City+Walls" target="_blank">📍 Google Maps ↗</a>
+        </div>
+      </div>
+      <div class="stop">
+        <div class="stop-icon" style="background:#fef3c7;">🛍️</div>
+        <div class="stop-content">
+          <h4>The Rows</h4>
+          <p>A two-level covered shopping gallery, unique in the world, dating from at least the 13th century. Black-and-white timber-framed facades on both levels — walk both.</p>
+          <div class="tags"><span class="tag tag-history">Unique</span></div>
+          <a class="map-link" href="https://maps.google.com/?q=The+Rows,+Chester" target="_blank">📍 Google Maps ↗</a>
+        </div>
+      </div>
+      <div class="stop">
+        <div class="stop-icon" style="background:#dbeafe;">⛪</div>
+        <div class="stop-content">
+          <h4>Chester Cathedral</h4>
+          <p>Red sandstone, one of the finest medieval cloisters in England. The refectory café inside is a good lunch stop before you push on into Wales.</p>
+          <div class="tags"><span class="tag tag-history">History</span><span class="tag tag-food">Lunch stop</span></div>
+          <a class="map-link" href="https://maps.google.com/?q=Chester+Cathedral" target="_blank">📍 Google Maps ↗</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- WALES -->
+<div id="wales" class="section">
+  <div class="section-intro">
+    <strong>26–28 July — Caernarfon, Snowdon, and Brecon Beacons.</strong> The finale of the trip. Most visitors miss Wales entirely — it's a different country, different language on every road sign, different landscape. You've saved the best walking country for last.
+  </div>
+
+  <div class="card open">
+    <div class="card-header" onclick="toggle(this)">
+      <div class="day-badge" style="background:#dcfce7; color:#166534;">26–27 Jul</div>
+      <div class="card-title"><h3>Caernarfon & Snowdonia</h3><p>Castle, coffee street, and Mount Snowdon</p></div>
       <span class="chevron">▾</span>
     </div>
     <div class="card-body">
       <div class="stop">
         <div class="stop-icon" style="background:#dbeafe;">🏰</div>
         <div class="stop-content">
-          <h4>Edinburgh Castle</h4>
-          <p>Perched on an ancient volcanic plug 430 feet above the city — it has been a fortress, a royal residence, a prison, and a military garrison. Inside: the Scottish Crown Jewels (older than the English Crown Jewels), the Stone of Destiny (on which Scottish kings were crowned), and the 15th-century cannon Mons Meg. Book tickets in advance — July queues without a booking are brutal. Allow 2–3 hours inside.</p>
-          <div class="tags"><span class="tag tag-history">History</span></div>
-          <a class="map-link" href="https://maps.google.com/?q=Edinburgh+Castle" target="_blank">📍 Google Maps ↗</a>
-        </div>
-      </div>
-      <div class="stop">
-        <div class="stop-icon" style="background:#dbeafe;">🏚️</div>
-        <div class="stop-content">
-          <h4>The Royal Mile & the Closes</h4>
-          <p>The spine of Edinburgh's Old Town — running from the Castle down to the Palace of Holyroodhouse (the Queen's official Scottish residence). But the real discoveries are the closes — narrow alleyways running off both sides of the Royal Mile into the medieval city. Mary King's Close (a 17th-century street buried under later buildings) can be visited on a guided tour. Riddle's Court, White Horse Close, and Brodie's Close are among the best. Each has a story.</p>
-          <div class="tags"><span class="tag tag-history">Medieval</span></div>
-          <a class="map-link" href="https://maps.google.com/?q=Royal+Mile,+Edinburgh" target="_blank">📍 Google Maps ↗</a>
-        </div>
-      </div>
-      <div class="stop">
-        <div class="stop-icon" style="background:#fef3c7;">🍺</div>
-        <div class="stop-content">
-          <h4>The Grassmarket</h4>
-          <p>A large open square below the castle walls — once Edinburgh's main market and public execution site (the gibbet stood here until 1784). Now lined with pubs, restaurants, and independent shops. Victoria Street (running up from the Grassmarket) is a curved, cobbled street of coloured shopfronts and is one of the most photographed streets in Scotland. J.K. Rowling is said to have been inspired by it for Diagon Alley.</p>
-          <div class="tags"><span class="tag tag-food">Pubs & restaurants</span><span class="tag tag-history">History</span></div>
-          <a class="map-link" href="https://maps.google.com/?q=Grassmarket,+Edinburgh" target="_blank">📍 Google Maps ↗</a>
-        </div>
-      </div>
-      <div class="stop">
-        <div class="stop-icon" style="background:#dcfce7;">⛰️</div>
-        <div class="stop-content">
-          <h4>Arthur's Seat — ancient volcano in the city</h4>
-          <p>A 250-million-year-old volcano rising 822 feet right out of the city. 45-minute walk to the summit — 360-degree views over Edinburgh, the Firth of Forth, and on clear days to the Highlands. Free, always open, and one of the most extraordinary things about Edinburgh — a genuine wild hill in the middle of a capital city. Go in the morning before the crowds.</p>
-          <div class="tags"><span class="tag tag-nature">Summit</span><span class="tag tag-nature">Free</span></div>
-          <a class="map-link" href="https://maps.google.com/?q=Arthur's+Seat,+Edinburgh" target="_blank">📍 Google Maps ↗</a>
-        </div>
-      </div>
-      <div class="stop">
-        <div class="stop-icon" style="background:#ede9fe;">🥃</div>
-        <div class="stop-content">
-          <h4>Scotch Whisky Experience & Greyfriars</h4>
-          <p>The Scotch Whisky Experience on the Royal Mile has a fascinating barrel ride through the history of Scotch — and a tasting session. Even if whisky isn't your thing, the experience is memorable. Nearby, Greyfriars Kirkyard is the churchyard that inspired J.K. Rowling — Tom Riddell's gravestone is here, and the churchyard itself is atmospheric in any weather.</p>
-          <div class="tags"><span class="tag tag-food">Whisky</span><span class="tag tag-history">Harry Potter connection</span></div>
-          <a class="map-link" href="https://maps.google.com/?q=Greyfriars+Kirkyard,+Edinburgh" target="_blank">📍 Google Maps ↗</a>
-        </div>
-      </div>
-      <div class="stop">
-        <div class="stop-icon" style="background:#dbeafe;">🏛️</div>
-        <div class="stop-content">
-          <h4>The Scottish National Museum — free</h4>
-          <p>One of the finest free museums in Europe. The history of Scotland from the earliest times to the present — Pictish stones, Jacobite relics, the original Dolly the sheep. Allow at least 2 hours. The rooftop terrace has excellent views over the Old Town.</p>
-          <div class="tags"><span class="tag tag-history">Museum</span><span class="tag tag-tip">Free entry</span></div>
-          <a class="map-link" href="https://maps.google.com/?q=National+Museum+of+Scotland,+Edinburgh" target="_blank">📍 Google Maps ↗</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="card-header" onclick="toggle(this)">
-      <div class="day-badge" style="background:#dcfce7; color:#166534;">Days 10–12</div>
-      <div class="card-title"><h3>Loch Ness → Glencoe → Fort William → Ben Nevis</h3><p>The wild heart of Scotland</p></div>
-      <span class="chevron">▾</span>
-    </div>
-    <div class="card-body">
-      <div class="stop">
-        <div class="stop-icon" style="background:#dbeafe;">🐉</div>
-        <div class="stop-content">
-          <h4>Loch Ness — Nessie's home</h4>
-          <p>Loch Ness is 23 miles long, 755 feet deep, and contains more fresh water than all the lakes in England and Wales combined. The water is peat-dark — almost black — which is why Nessie has remained so elusive for so long. Urquhart Castle on the western shore (13th-16th century ruins) is the classic viewpoint and worth a proper visit. Drive the southern shore on the B862 for the less-visited but more dramatic views. No sightings guaranteed but the loch itself is haunting and magnificent.</p>
-          <div class="tags"><span class="tag tag-nature">Loch</span><span class="tag tag-history">Castle ruins</span></div>
-          <a class="map-link" href="https://maps.google.com/?q=Loch+Ness,+Scotland" target="_blank">📍 Google Maps ↗</a>
-        </div>
-      </div>
-      <div class="stop">
-        <div class="stop-icon" style="background:#dcfce7;">🌄</div>
-        <div class="stop-content">
-          <h4>Glencoe — Scotland's most dramatic glen</h4>
-          <p>Drive slowly. Stop. Walk. Glencoe is a glacial valley of extraordinary drama — three-sided mountains called the Three Sisters dropping straight to the valley floor, a river running through the middle, and a silence that feels ancient. Site of the 1692 Glencoe Massacre — when the Campbells killed 38 MacDonalds in their beds — the valley carries a weight of history that you feel even without knowing the story. The visitor centre explains it beautifully.</p>
-          <div class="tags"><span class="tag tag-nature">Scenery</span><span class="tag tag-history">History</span></div>
-          <a class="map-link" href="https://maps.google.com/?q=Glencoe,+Scotland" target="_blank">📍 Google Maps ↗</a>
+          <h4>Caernarfon — your base for the night</h4>
+          <p>Edward I built the castle in 1283 to control Wales — staggering in scale. Near the castle, a street lined with independent coffee shops and cafés is the perfect end to a driving day. The town walls are largely intact and walkable, and the Welsh language is very much alive here.</p>
+          <div class="tags"><span class="tag tag-history">History</span><span class="tag tag-food">Coffee & food</span></div>
+          <a class="map-link" href="https://maps.google.com/?q=Caernarfon+Castle,+Wales" target="_blank">📍 Google Maps ↗</a>
         </div>
       </div>
       <div class="stop">
         <div class="stop-icon" style="background:#dcfce7;">🏔️</div>
         <div class="stop-content">
-          <h4>Ben Nevis — the reason for the whole trip (1,345m)</h4>
-          <p>Britain's highest mountain. The Mountain Track (also called the Tourist Path) starts at the Ben Nevis Visitor Centre outside Fort William — 17km return, 1,345m of ascent. Allow 7–9 hours. Start before 8am. Wear proper hiking boots — the path is rocky and can be icy near the summit even in July. Bring waterproofs, warm layers, water (2 litres minimum), food, and a map. The summit is often in cloud — if you get a clear day the views extend to Ireland and the Orkneys. Even in cloud, the achievement is real.</p>
-          <div class="tags"><span class="tag tag-nature">Summit</span><span class="tag tag-nature">Full day hike</span></div>
-          <div class="warning-box">⚠️ <strong>Ben Nevis safety:</strong> Check the mountain forecast at mwis.org.uk the day before. Tell your accommodation your intended route and expected return. The summit temperature can be 15°C colder than Fort William. More people get into serious difficulty on Ben Nevis than any other British mountain — almost always because they underestimated it.</div>
-          <a class="map-link" href="https://maps.google.com/?q=Ben+Nevis+Visitor+Centre,+Fort+William" target="_blank">📍 Google Maps ↗</a>
-          <br><a class="map-link" href="https://www.mwis.org.uk" target="_blank">Mountain weather forecast ↗</a>
-        </div>
-      </div>
-      <div class="stop">
-        <div class="stop-icon" style="background:#dcfce7;">🦟</div>
-        <div class="stop-content">
-          <h4>Scottish Midges — a word of warning</h4>
-          <p>Tiny biting insects, almost invisible, present in vast numbers near water and vegetation in the Highlands from June to August — particularly at dawn and dusk. They don't carry disease but the bites itch intensely. Buy Smidge or Avon Skin So Soft (the Scottish Army's unofficial midge repellent — it genuinely works) before you arrive in the Highlands. A head net is not excessive.</p>
-          <div class="tags"><span class="tag tag-tip">Practical</span></div>
+          <h4>Mount Snowdon (1,085m) — 27 July, if possible</h4>
+          <p>The Llanberis Path is the most popular route — 5 miles each way, allow 5–6 hours return — or take the historic rack railway to the summit if you'd rather save your legs after Ben Nevis. On a clear day you can see Ireland. Given you've already done Ben Nevis, this is very achievable, and the summit café (Hafod Eryri) is a genuinely well-designed modern building.</p>
+          <div class="tags"><span class="tag tag-nature">Hiking</span></div>
+          <a class="map-link" href="https://maps.google.com/?q=Snowdon+Mountain+Railway,+Llanberis" target="_blank">📍 Google Maps ↗</a>
         </div>
       </div>
     </div>
-  </div>
-</div>
-
-<!-- YORK -->
-<div id="york" class="section">
-  <div class="section-intro">
-    <strong>York — 2 days minimum.</strong> York is the finest medieval city in England and possibly in Northern Europe. Founded by the Romans in 71 AD as Eboracum — it became the capital of Roman Britain, then a Viking city called Jorvik, then a Norman stronghold, then a medieval trading city of immense wealth. Every layer of history is still visible. Two days here is not enough but it's a start.
   </div>
 
   <div class="card open">
     <div class="card-header" onclick="toggle(this)">
-      <div class="day-badge" style="background:#ede9fe; color:#5b21b6;">Days 13–14</div>
-      <div class="card-title"><h3>York</h3><p>Minster · Shambles · Railway Museum · City Walls · Market</p></div>
+      <div class="day-badge" style="background:#dcfce7; color:#166534;">28 Jul</div>
+      <div class="card-title"><h3>Caernarfon → Brecon Beacons, maybe Cardiff</h3><p>Your last day in the UK before heading for Dover</p></div>
       <span class="chevron">▾</span>
     </div>
     <div class="card-body">
       <div class="stop">
-        <div class="stop-icon" style="background:#dbeafe;">⛪</div>
+        <div class="stop-icon" style="background:#dcfce7;">⛰️</div>
         <div class="stop-content">
-          <h4>York Minster — one of the greatest Gothic buildings on earth</h4>
-          <p>Construction began in 1220 and took 252 years to complete. Stand inside and look up — the scale is overwhelming. The Great East Window (1405–1408) contains the world's largest area of medieval stained glass — 311 individual panels depicting the beginning and end of all things. Climb the 275 steps of the Central Tower for views across York and the Vale of York. The undercroft beneath the Minster contains Roman columns from the original fortress — 2,000 years of history in one building.</p>
-          <div class="tags"><span class="tag tag-history">Gothic cathedral</span><span class="tag tag-history">Medieval glass</span></div>
-          <a class="map-link" href="https://maps.google.com/?q=York+Minster" target="_blank">📍 Google Maps ↗</a>
+          <h4>Brecon Beacons National Park</h4>
+          <p>Open moorland, ancient standing stones, waterfalls, and a Dark Sky Reserve. The Waterfalls Walk near Pontneddfechan passes four separate waterfalls in a 4-mile loop through ancient oak woodland — one of the most beautiful short walks in Britain, and a gentle way to close out the hiking side of the trip.</p>
+          <div class="tags"><span class="tag tag-nature">Waterfalls</span><span class="tag tag-nature">Hiking</span></div>
+          <a class="map-link" href="https://maps.google.com/?q=Brecon+Beacons+National+Park" target="_blank">📍 Google Maps ↗</a>
         </div>
       </div>
       <div class="stop">
-        <div class="stop-icon" style="background:#ede9fe;">🧙</div>
+        <div class="stop-icon" style="background:#dbeafe;">🏙️</div>
         <div class="stop-content">
-          <h4>The Shambles — Harry Potter's Diagon Alley</h4>
-          <p>A medieval street so narrow that the upper floors of the buildings nearly touch overhead — unchanged in essential character since the 14th century. The overhanging timber-framed buildings were originally butchers' shops (the word "shambles" comes from the Anglo-Saxon for a meat market). J.K. Rowling is widely believed to have used The Shambles as the inspiration for Diagon Alley — and the resemblance is unmistakable. The Shambles Market behind it operates Tuesday to Sunday with local produce, street food, and crafts.</p>
-          <div class="tags"><span class="tag tag-history">Medieval</span><span class="tag tag-history">Harry Potter</span><span class="tag tag-market">Market Tue–Sun</span></div>
-          <a class="map-link" href="https://maps.google.com/?q=The+Shambles,+York" target="_blank">📍 Google Maps ↗</a>
+          <h4>Cardiff — if there's time</h4>
+          <p>An hour south of the Beacons. Cardiff Castle sits right in the city centre — a genuine Norman keep with an extravagant Victorian Gothic interior layered on top. Cardiff Bay, redeveloped from the old docklands, is a pleasant place for an evening walk if you make it that far. Only worth the detour if your Brecon morning goes smoothly — otherwise a slower final day in the Beacons is time well spent too.</p>
+          <div class="tags"><span class="tag tag-history">Castle</span><span class="tag tag-tip">Optional</span></div>
+          <a class="map-link" href="https://maps.google.com/?q=Cardiff+Castle" target="_blank">📍 Google Maps ↗</a>
+        </div>
+      </div>
+      <div class="info-box">🧱 <strong>The dry stone walls, one last time.</strong> The limestone walls of Wales, built without mortar since the 1500s, are where this same craft first caught your eye on the way north — a fitting thing to notice again on your final Welsh morning.</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header" onclick="toggle(this)">
+      <div class="day-badge" style="background:#185FA5; color:white;">29 Jul →</div>
+      <div class="card-title"><h3>Homeward: Dover → Calais → Belgium → Switzerland</h3><p>29 July – 1 August · Interlaken fireworks</p></div>
+      <span class="chevron">▾</span>
+    </div>
+    <div class="card-body">
+      <div class="stop">
+        <div class="stop-icon" style="background:#dbeafe;">⛴️</div>
+        <div class="stop-content">
+          <h4>29 July — Dover to Calais</h4>
+          <p>Drive to Dover and take the ferry back across to Calais, closing the loop that began 12 days earlier.</p>
         </div>
       </div>
       <div class="stop">
-        <div class="stop-icon" style="background:#dbeafe;">🏛️</div>
+        <div class="stop-icon" style="background:#dcfce7;">🌊</div>
         <div class="stop-content">
-          <h4>York City Walls — a complete medieval circuit</h4>
-          <p>York's city walls are the most complete medieval city walls in England — you can walk the entire 2.75-mile circuit along the top. They were built on Roman foundations in the 12th–14th centuries and incorporated several Roman towers. Four main gateways (called Bars) survive: Micklegate Bar (through which kings traditionally entered York), Bootham Bar, Monk Bar, and Walmgate Bar (the only one with its original barbican intact). Free to walk at any time.</p>
-          <div class="tags"><span class="tag tag-history">Roman & Medieval</span><span class="tag tag-tip">Free</span></div>
-          <a class="map-link" href="https://maps.google.com/?q=York+City+Walls" target="_blank">📍 Google Maps ↗</a>
+          <h4>30 July — the Belgian coast</h4>
+          <p>The Belgian coast between De Panne and Ostend is a good, unhurried way to decompress after two weeks of driving — long sandy beaches and a much gentler pace than the Highlands.</p>
         </div>
       </div>
       <div class="stop">
-        <div class="stop-icon" style="background:#dcfce7;">🚂</div>
+        <div class="stop-icon" style="background:#fef3c7;">🚗</div>
         <div class="stop-content">
-          <h4>National Railway Museum — the world's finest</h4>
-          <p>The largest railway museum in the world and one of the great museums of any kind in Britain — and it's free. The collection includes Mallard (the fastest steam locomotive ever built, 1938 record of 126mph that still stands), the bullet-nosed Eurostar, Queen Victoria's royal carriage, and a Japanese Shinkansen. The Great Hall — a former locomotive roundhouse — is spectacular just as a piece of architecture. Allow 2–3 hours minimum. Children love it; adults are equally stunned.</p>
-          <div class="tags"><span class="tag tag-history">Museum</span><span class="tag tag-tip">Free entry</span></div>
-          <a class="map-link" href="https://maps.google.com/?q=National+Railway+Museum,+York" target="_blank">📍 Google Maps ↗</a>
+          <h4>31 July — towards Switzerland</h4>
+          <p>The long final driving day home.</p>
         </div>
       </div>
       <div class="stop">
-        <div class="stop-icon" style="background:#fef3c7;">🍰</div>
+        <div class="stop-icon" style="background:#fee2e2;">🎆</div>
         <div class="stop-content">
-          <h4>Betty's Tea Room — a York institution since 1936</h4>
-          <p>The Fat Rascal — a large, spiced fruited scone unique to Betty's — is the thing to order. The café is beautifully preserved Art Deco. There will be a queue. It is worth it. Go for afternoon tea if you can. The shop sells their own teas, chocolates, and pastries to take with you.</p>
-          <div class="tags"><span class="tag tag-food">Afternoon tea</span></div>
-          <a class="map-link" href="https://maps.google.com/?q=Betty's+Tea+Room+York" target="_blank">📍 Google Maps ↗</a>
-        </div>
-      </div>
-      <div class="stop">
-        <div class="stop-icon" style="background:#ede9fe;">⚔️</div>
-        <div class="stop-content">
-          <h4>JORVIK Viking Centre</h4>
-          <p>Built on the site of a real Viking excavation — you ride through a recreation of 10th-century Viking York, including authentic smells. The actual artefacts in the museum below are remarkable. York was a major Viking city (Jorvik) from 866 to 954 AD — this is where that history comes alive.</p>
-          <div class="tags"><span class="tag tag-history">Viking history</span></div>
-          <a class="map-link" href="https://maps.google.com/?q=JORVIK+Viking+Centre,+York" target="_blank">📍 Google Maps ↗</a>
-        </div>
-      </div>
-      <div class="stop">
-        <div class="stop-icon" style="background:#fef3c7;">🥕</div>
-        <div class="stop-content">
-          <h4>York Market — Newgate Market</h4>
-          <p>One of the largest outdoor markets in the north of England — operating on the same site since the 13th century. Open Tuesday to Sunday (reduced on Sunday). Fruit, veg, fish, cheese, flowers, street food. The atmosphere on a busy Saturday morning is fantastic.</p>
-          <div class="tags"><span class="tag tag-market">Market Tue–Sun</span><span class="tag tag-food">Local produce</span></div>
-          <a class="map-link" href="https://maps.google.com/?q=Newgate+Market,+York" target="_blank">📍 Google Maps ↗</a>
+          <h4>1 August — Interlaken, Swiss National Day</h4>
+          <p>Timed perfectly — fireworks at 10pm to mark the end of the trip and the start of home.</p>
         </div>
       </div>
     </div>
@@ -633,64 +668,47 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
     <ul>
       <li>Stay left at all times. At every junction look right first — traffic comes from your right</li>
       <li>Roundabouts are everywhere. Go clockwise. Give way to traffic already on the roundabout (from your right)</li>
-      <li>In Wales and Scotland you will encounter single-track roads with passing places — small lay-bys on alternate sides. Pull into one to let oncoming traffic pass. Wave as they go — it's expected</li>
-      <li>Speed limits: 30mph in towns (watch for the signs), 60mph on single-carriageway A-roads, 70mph on motorways</li>
-      <li>Speed cameras are common — particularly on A-roads through villages. The cameras are yellow boxes on poles</li>
-      <li>UK petrol stations: unleaded (petrol) is the green nozzle, diesel is the black nozzle. Don't mix them up</li>
+      <li>In Scotland and Wales you'll meet single-track roads with passing places — pull into one to let oncoming traffic pass, and a wave as they go is expected</li>
+      <li>Speed limits: 30mph in towns, 60mph on single-carriageway A-roads, 70mph on motorways — speed cameras are common on A-roads through villages</li>
+      <li>UK petrol stations: unleaded (petrol) is the green nozzle, diesel is the black nozzle</li>
     </ul>
   </div>
   <div class="tip-section">
     <h3>☔ Weather</h3>
     <ul>
-      <li>July is Britain's best month — but expect some rain. The west (Wales, Lake District, Scotland) is wetter than the east</li>
-      <li>A waterproof jacket is non-negotiable. Keep it in the car at all times</li>
-      <li>Mountain weather changes fast — summit conditions can be cloud, wind, and near-zero even in July</li>
+      <li>July is Britain's best month, but expect some rain — the west (Wales, the Lakes, Scotland) is wetter than the east</li>
+      <li>A waterproof jacket in the car at all times, non-negotiable</li>
+      <li>Mountain weather changes fast — check mwis.org.uk before Ben Nevis and Snowdon, and again for your Carlisle camping decision</li>
       <li>Scottish midges are worst at dawn and dusk near water — buy Smidge repellent before entering the Highlands</li>
-      <li>Sunscreen still needed — UV is high even on cloudy days</li>
     </ul>
   </div>
   <div class="tip-section">
-    <h3>🏨 Accommodation</h3>
+    <h3>🏨 Accommodation & bookings</h3>
     <ul>
-      <li>July is peak season — book 2–3 nights ahead as you travel, not on the night</li>
+      <li>Fort William is already booked — good. Keep booking 2–3 nights ahead for the rest, especially Edinburgh and the Lakes</li>
+      <li>You've already noticed the Highlands are busy this July — the same applies to camping near Hadrian's Wall, so have a Carlisle fallback in mind</li>
       <li>Wild camping is legal in Scotland under the Land Reform Act 2003 — not in England or Wales without landowner permission</li>
-      <li>YHA youth hostels are excellent value and well located throughout your route</li>
-      <li>Farm stays: search Airbnb "farm" + location, or Cool Camping (coolcamping.com) for a genuine experience</li>
-      <li>In Edinburgh and York, park outside the centre and walk in — city centre parking is expensive and scarce</li>
+      <li>In Edinburgh and York, park outside the centre and walk in — city-centre parking is expensive and scarce</li>
     </ul>
   </div>
   <div class="tip-section">
     <h3>💷 Money & practicalities</h3>
     <ul>
-      <li>Currency: Pound Sterling (£) throughout — including Scotland (Scottish banknotes are valid everywhere in Scotland; may be refused in England, use English notes there)</li>
-      <li>Contactless payment accepted virtually everywhere — shops, car parks, pubs, markets</li>
-      <li>Tipping: 10–15% in restaurants if service not included. Not expected in pubs</li>
-      <li>Free drinking water: tap water is safe everywhere in the UK. Ask any café or pub to refill your bottle</li>
-      <li>Pharmacies (called Chemists or Boots) are easy to find in every town</li>
+      <li>Currency: Pound Sterling (£) throughout, including Scotland (Scottish banknotes valid in Scotland, may be refused in England)</li>
+      <li>Contactless payment accepted virtually everywhere</li>
+      <li>Tipping: 10–15% in restaurants if service isn't included; not expected in pubs</li>
+      <li>Tap water is safe everywhere in the UK</li>
     </ul>
   </div>
   <div class="tip-section">
-    <h3>⛰️ Ben Nevis — preparation checklist</h3>
+    <h3>⛰️ Ben Nevis & Snowdon — preparation checklist</h3>
     <ul>
-      <li>Start before 8am from the Visitor Centre car park, Fort William</li>
-      <li>Proper hiking boots — not trainers. The path is rocky and can be icy near the summit</li>
-      <li>Waterproof jacket and warm layers even if Fort William is warm and sunny</li>
-      <li>2 litres of water per person minimum</li>
-      <li>Food — sandwiches, snacks, chocolate. The summit is cold and windy</li>
-      <li>Check mountain forecast at mwis.org.uk the evening before</li>
+      <li>Start before 8am from the trailhead car park</li>
+      <li>Proper hiking boots, not trainers</li>
+      <li>Waterproof jacket and warm layers even if it's warm and sunny at the bottom</li>
+      <li>2 litres of water per person minimum, plus food</li>
+      <li>Check the mountain forecast the evening before</li>
       <li>Tell your accommodation your route and expected return time</li>
-      <li>The Mountain Track is clearly marked — don't leave it in poor visibility</li>
-    </ul>
-  </div>
-  <div class="tip-section">
-    <h3>🗓️ Market days summary</h3>
-    <ul>
-      <li><strong>Chester Market</strong> — Monday to Saturday, Princess Street indoor market</li>
-      <li><strong>York Shambles Market</strong> — Tuesday to Sunday</li>
-      <li><strong>York Newgate Market</strong> — Tuesday to Sunday (largest outdoor market in the north)</li>
-      <li><strong>Edinburgh Farmers' Market</strong> — every Saturday, Castle Terrace</li>
-      <li><strong>Brecon Market</strong> — Tuesday and Friday, the centre of Brecon town</li>
-      <li><strong>Ambleside (Lake District)</strong> — Wednesday and Saturday market</li>
     </ul>
   </div>
 </div>
